@@ -1,5 +1,5 @@
 # IntegrationProject
 Squirtle Team Integration Project
+Gabriel Maldonado Sepulveda
+Roberto Uriel García Sanabria
 
-
-O. Orlando Lopez L.
