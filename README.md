@@ -2,5 +2,5 @@
 Squirtle Team Integration Project
 
 
-O. Orlando Lopez L.
+Orlando Lopez L.
 Mauro Moreno J.
