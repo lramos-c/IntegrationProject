@@ -1,7 +1,7 @@
 # IntegrationProject
 Squirtle Team Integration Project
-
-
+Luis Angel Ramos Cruz
 Gabriel Maldonado Sepulveda
-
-jesus garcia
+Jesus garcia
+Roberto Uriel García Sanabria
+Orlando Lopez L.
