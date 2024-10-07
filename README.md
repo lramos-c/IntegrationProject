@@ -7,3 +7,4 @@ Gabriel Maldonado Sepulveda
 Jesus garcia
 Roberto Uriel García Sanabria
 Orlando Lopez L.
+Eduardo Jiménez Rodríguez
