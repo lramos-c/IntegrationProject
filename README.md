@@ -1,5 +1,5 @@
 # IntegrationProject
 Squirtle Team Integration Project
-
-Eduardo Jiménez Rodríguez
 Gabriel Maldonado Sepulveda
+Roberto Uriel García Sanabria
+
