@@ -2,4 +2,8 @@
 Squirtle Team Integration Project
 
 Alejandra Moreno
-O. Orlando Lopez L.
+Luis Angel Ramos Cruz
+Gabriel Maldonado Sepulveda
+Jesus garcia
+Roberto Uriel García Sanabria
+Orlando Lopez L.
