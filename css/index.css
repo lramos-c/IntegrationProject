@@ -1,4 +1,9 @@
-
+*{
+    font-family: "Inter", sans-serif ;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
 #header{
     background-color: #4D3147;
     color: #FFFBFF;
@@ -16,4 +21,7 @@ a {
 
 body {
     background-color: #FFFBFF !important;
+}
+.fecha{
+    color: #FFFBFF !important;
 }
