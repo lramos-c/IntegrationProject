@@ -1,5 +1,5 @@
-# IntegrationProject
-Squirtle Team Integration Project
+ IntegrationProject
+le Team Integration Project
 
 Alejandra Moreno
 Luis Angel Ramos Cruz
