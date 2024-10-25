@@ -5,7 +5,7 @@ Alejandra Moreno
 Luis Angel Ramos Cruz
 Gabriel Maldonado Sepulveda
 Jesus garcia
-Roberto Uriel García Sanabria 1
+Roberto Uriel García Sanabria
 Orlando Lopez L.
 Eduardo Jiménez Rodríguez
 Flor Itzel Jardinez Escárcgea
