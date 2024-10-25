@@ -1,18 +1,43 @@
-*{
-    font-family: "Inter", sans-serif ;
+
+/*Media queries para diseño responsivo*/
+@media (max-width: 768px) {
+    #header, #footer {
+        width: 100vw; 
+    }
+
+    .card {
+        width: 100%; 
+        max-width: 350px; 
+        margin: 10px; 
+    }
+
+    
+    .row {
+        flex-direction: column; 
+        align-items: start; 
+    }
+
+    body {
+        width: 100%;
+    }
+}
+
+a {
+    target: _blank;
+}
+
+* {
+    font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
 }
-#header{
+
+#header, #footer {
     background-color: #4D3147;
     color: #FFFBFF;
-}
-
-#footer{
-    background-color: #4D3147;
-    color: #FFFBFF;
-
+    width: 100vw; 
+    margin: 0 !important; 
 }
 
 a {
@@ -21,7 +46,85 @@ a {
 
 body {
     background-color: #FFFBFF !important;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
-.fecha{
+
+.fecha {
     color: #FFFBFF !important;
+}
+
+.card-img-top {
+    max-width: 287px !important;
+    max-height: 287px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+}
+
+.card {
+    height: 600px !important;
+    width: 350px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-align: center; 
+    padding: 20px; 
+    margin: 20px;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.title-aboutUs {
+    margin-top: 50px;
+    font-weight: 700;
+}
+
+.text-aboutUs {
+    text-align: justify;
+    margin-top: 50px;
+    font-weight: 400;
+}
+
+.img-container {
+    position: relative;
+    width: 100%; 
+    max-width: 287px; 
+    height: 287px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    overflow: hidden; 
+    left: 12px;
+}
+
+.img-original, .img-hover {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    border-radius: 50%; 
+    transition: opacity 0.3s ease; 
+}
+
+.img-original {
+    opacity: 1; 
+}
+
+.img-hover {
+    opacity: 0; 
+}
+
+.img-container:hover .img-original {
+    opacity: 0; 
+}
+
+.img-container:hover .img-hover {
+    opacity: 1; 
 }
