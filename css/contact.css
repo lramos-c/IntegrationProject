@@ -23,6 +23,9 @@
     margin-bottom: 20px;
     
 }
+ .iconos-redes{
+	margin:50px;
+ }
 
 textarea{
   background-color: #fffbff; 
@@ -102,6 +105,10 @@ form span{
 .formulario input:focus{
 	outline:0;
 	border: 1px solid #C9B7C7;
+}
+.fecha{
+	margin-top:50px ;
+	margin-left:50px;
 }
 
 
