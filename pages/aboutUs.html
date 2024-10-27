@@ -9,29 +9,50 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-</head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  </head>
 <body>
     <header class="p-3  text-white" id="header">
-        <div class="container">
-          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="/">
-              <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><img src="/assets/logo_round.png" alt="" height="213px"><use xlink:href="#bootstrap"></use></svg>
-            </a>
+        <div class="head-container container-fluid ">
+          <a href="/">
+            <img src="/assets/logo_round.png" alt="" id="logo">
+          </a>
+          <div class="elements d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            
     
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-              <li><a href="#" class="nav-link px-2 text-white">Categorías</a></li>
-              <li><a href="#" class="nav-link px-2 text-white">Lo más nuevo</a></li>
-              <li><a href="#" class="nav-link px-2 text-white">Promociones</a></li>
-            </ul>
-    
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-              <input type="search" class="form-control form-control-dark" placeholder="ISBN, Autor, Título..." aria-label="Search">
+            
+            <div class=" d-flex nav-component1">
+              <form class="search-bar-container">
+                <button class="burger-btn">
+                    <span class="material-icons">menu</span>
+                </button>
+                <input type="search" class="form-control searchbar" placeholder="ISBN, Autor, Título..." aria-label="Search">
+                <button class="search-btn">
+                    <span class="material-icons">search</span>
+                </button>
             </form>
-    
-            <div class="text-end">
-              <button type="button" class="btn btn-outline-light me-2">Iniciar Sesión</button>
-              <button type="button" class="btn btn-warning">Carrito</button>
+            <button class="cart-btn ">
+              <span class="material-icons">shopping_cart</span>
+              Carrito
+           </button>
             </div>
+
+            <div class=" d-flex nav-component2">
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li class="nav-item-top"><a href="#" class="nav-link px-2 text-white">Categorías</a></li>
+              <li class="nav-item-top"><a href="#" class="nav-link px-2 text-white">Lo más nuevo</a></li>
+              <li class="nav-item-top"><a href="#" class="nav-link px-2 text-white">Promociones</a></li>
+            </ul>
+
+            <button type="button" class="btn acc-btn">
+              <span class="material-icons">person</span>
+              Iniciar Sesión
+            </button>            
+            
+            
+            </div>
+
           </div>
         </div>
         
@@ -45,7 +66,7 @@
       <p class="text-aboutUs">Convertirnos en una de las librerías de referencia en nuestro ramo, fomentando la creatividad y el diálogo a través de eventos literarios. Lo lograremos siendo un espacio dinámico, con una comunidad activa de lectores. Organizando clubes de lectura y presentaciones de libros.
         Además con un enfoque centrado en el cliente, capacitación del personal, marketing efectivo y alianzas con autores y editoriales locales. Queremos cultivar sueños y conexiones en torno a la lectura.</p>
       
-        <div class="row row-cols-2 row-cols-md-3 g-4">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
           <div class="col">
             <div class="card" style="width: 18rem;">
               <div class="card-body">
