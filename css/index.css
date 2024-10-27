@@ -179,11 +179,11 @@ body {
 .nav-component2::before {
     content: "";
     position: absolute;
-    top: 12vh; /* Position at the top */
-    left: 40vh; /* Position based on your desired start point */
-    right: 20vh; /* Set the right side to control length */
-    height: 1px; /* Height of the line */
-    background-color: #C9B7C7; /* Line color */
+    top: 12vh; 
+    left: 40vh; 
+    right: 20vh; 
+    height: 1px; 
+    background-color: #C9B7C7; 
 }
 
 .carrito {
@@ -200,7 +200,7 @@ body {
 input.search-bar {
     width: 100%;
     padding: 1vh;
-    padding-right: 3vw; /* Space for icons */
+    padding-right: 3vw; 
     border: none;
     outline: none;
     font-size: 1rem;
@@ -227,7 +227,7 @@ input {
 
 .search-bar input[type="search"] {
     flex-grow: 1;
-    padding: 1vh 1.25vw 1vh 3vw; /* Add left padding for burger icon */
+    padding: 1vh 1.25vw 1vh 3vw; 
     border: none;
     outline: none;
     font-size: 1rem;
