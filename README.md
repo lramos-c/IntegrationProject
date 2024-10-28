@@ -1,4 +1,4 @@
-# IntegrationProject
+ IntegrationProject
 Squirtle Team Integration Project
 
 Alejandra Moreno
