@@ -9,79 +9,61 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-</head>
-<body>
-    
-        <!-- <header class="py-3 mb-3 border-bottom">
-            <div class="container-fluid d-grid gap-3 align-items-center" style="grid-template-columns: 1fr 2fr;">
-              <div class="dropdown">
-                <a href="#" class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none dropdown-toggle" id="dropdownNavLink" data-bs-toggle="dropdown" aria-expanded="false">
-                  <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-                </a>
-                <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownNavLink">
-                  <li><a class="dropdown-item active" href="#" aria-current="page">Overview</a></li>
-                  <li><a class="dropdown-item" href="#">Inventory</a></li>
-                  <li><a class="dropdown-item" href="#">Customers</a></li>
-                  <li><a class="dropdown-item" href="#">Products</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Reports</a></li>
-                  <li><a class="dropdown-item" href="#">Analytics</a></li>
-                </ul>
-              </div>
-        
-              <div class="d-flex align-items-center">
-                <form class="w-100 me-3">
-                  <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-                </form>
-        
-                <div class="flex-shrink-0 dropdown">
-                  <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
-                  </a>
-                  <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-                    <li><a class="dropdown-item" href="#">New project...</a></li>
-                    <li><a class="dropdown-item" href="#">Settings</a></li>
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Sign out</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </header>
-    </header> -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+  </head>
+<body>
     <header class="p-3  text-white" id="header">
-        <div class="container">
-          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="/">
-              <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><img src="/assets/logo_round.png" alt="" height="213px"><use xlink:href="#bootstrap"></use></svg>
-            </a>
+        <div class="head-container container-fluid ">
+          <a href="/">
+            <img src="/assets/logo_round.png" alt="" id="logo">
+          </a>
+          <div class="elements d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            
     
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-              <li><a href="#" class="nav-link px-2 text-white">Categorías</a></li>
-              <li><a href="#" class="nav-link px-2 text-white">Lo más nuevo</a></li>
-              <li><a href="#" class="nav-link px-2 text-white">Promociones</a></li>
-            </ul>
-    
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-              <input type="search" class="form-control form-control-dark" placeholder="ISBN, Autor, Título..." aria-label="Search">
+            
+            <div class=" d-flex nav-component1">
+              <form class="search-bar-container">
+                <button class="burger-btn">
+                    <span class="material-icons">menu</span>
+                </button>
+                <input type="search" class="form-control searchbar" placeholder="ISBN, Autor, Título..." aria-label="Search">
+                <button class="search-btn">
+                    <span class="material-icons">search</span>
+                </button>
             </form>
-    
-            <div class="text-end">
-              <button type="button" class="btn btn-outline-light me-2">Iniciar Sesión</button>
-              <button type="button" class="btn btn-warning">Carrito</button>
+            <button class="cart-btn ">
+              <span class="material-icons">shopping_cart</span>
+              Carrito
+           </button>
             </div>
+
+            <div class=" d-flex nav-component2">
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li class="nav-item-top"><a href="#" class="nav-link px-2 text-white">Categorías</a></li>
+              <li class="nav-item-top"><a href="#" class="nav-link px-2 text-white">Lo más nuevo</a></li>
+              <li class="nav-item-top"><a href="#" class="nav-link px-2 text-white">Promociones</a></li>
+            </ul>
+
+            <button type="button" class="btn acc-btn">
+              <span class="material-icons">person</span>
+              Iniciar Sesión
+            </button>            
+            
+            
+            </div>
+
           </div>
         </div>
         
       </header>
     <main class="container">
-      <h1>Nuestra Página Principal</h1>
+
     </main>
 
     <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top" id="footer">
         <div class="col mb-3">
+
           <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
             <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
           </a>
@@ -132,3 +114,4 @@
       </footer>
 </body>
 </html>
+

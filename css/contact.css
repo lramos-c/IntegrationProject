@@ -23,9 +23,16 @@
     margin-bottom: 20px;
     
 }
+ .iconos-redes{
+	margin:50px;
+ }
+
+.error{
+	color: #ffc107;
+}
 
 textarea{
-  background-color: #fffbff; 
+    background-color: #fffbff; 
 	width: 405px; 
 	height: 150px; 
 	border-radius: 5px;  
@@ -38,6 +45,9 @@ textarea{
     padding-top: 15px; 
 }
 
+#mensaje{
+	resize: none;
+}
 
 .formulario-inputs label{
     display: block; 
@@ -102,6 +112,10 @@ form span{
 .formulario input:focus{
 	outline:0;
 	border: 1px solid #C9B7C7;
+}
+.fecha{
+	margin-top:50px ;
+	margin-left:50px;
 }
 
 
