@@ -164,6 +164,60 @@ body {
     opacity: 1; 
 }
 
+
+/* Heder responsivo */
+
+@media (max-width: 768px) {
+    #header {
+        width: 100vw; 
+        padding: 10px; /* Ajustamos el padding */
+    }
+
+    .nav {
+        flex-direction: column; /* Colocamos los elementos de la navegación en columna */
+        align-items: center; /* Centramos los elementos */
+    }
+
+    .nav-link {
+        padding: 10px 0; /* Espaciado entre los enlaces */
+    }
+
+    .form-control {
+        width: 100%; /* Hacemos que el input de búsqueda use el 100% */
+        margin-bottom: 10px; /* Espacio inferior */
+    }
+
+    .btn {
+        width: 100%; /* Botones ocupan el ancho completo */
+        margin-bottom: 10px; /* Espacio entre botones */
+    }
+
+    .text-end {
+        text-align: center; /* Centra los botones en dispositivos móviles */
+    }
+}
+
+/* Estilos generales */
+#header {
+    background-color: #4D3147;
+    color: #FFFBFF;
+    width: 100vw; 
+    margin: 0 !important; 
+}
+
+.nav-link {
+    color: #FFFBFF !important;
+}
+
+/* Otros estilos que ya tienes */
+body {
+    background-color: #FFFBFF !important;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .nav-component1 {
     height: 60%;
     width: 100%;
@@ -294,3 +348,4 @@ input {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
