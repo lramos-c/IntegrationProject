@@ -24,8 +24,12 @@
     
 }
 
+.error{
+	color: #ffc107;
+}
+
 textarea{
-  background-color: #fffbff; 
+    background-color: #fffbff; 
 	width: 405px; 
 	height: 150px; 
 	border-radius: 5px;  
@@ -38,6 +42,9 @@ textarea{
     padding-top: 15px; 
 }
 
+#mensaje{
+	resize: none;
+}
 
 .formulario-inputs label{
     display: block; 
