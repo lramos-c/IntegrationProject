@@ -1,7 +1,10 @@
-/*Media queries for responsive design*/
 @media (max-width: 768px) {
     #header, #footer {
         width: 100vw;
+    }
+
+    #footer {
+        gap: 2rem !important;
     }
 
     .body {
@@ -9,8 +12,9 @@
         padding: 0 !important;
     }
     .card {
-        width: 100%;
+        width: 90%; /* Adjusted width to fit within container */
         max-width: 22rem;
+        height: auto; /* Removed fixed height */
     }
     
     .card-body {
@@ -20,7 +24,7 @@
     .row {
         flex-direction: column;
         align-items: center;
-        gap: 10rem;
+        gap: 2rem; /* Reduced gap to prevent overflow */
         margin-left: 0 !important;
     }
 
@@ -28,6 +32,10 @@
         flex-direction: column;
         align-items: center;
     }
+    .head-container {
+        width: 100% !important;
+    }
+
     .nav-component2, .acc-btn, .nav-item-top {
         display: none !important;
     }
@@ -45,28 +53,32 @@
         width: 100%;
         height: auto;
         border-radius: 5px;
-        overflow: hidden;
         object-fit: cover; 
     }
 
     .col {
         padding: 0 !important;
         margin-top: 1vh !important;
+        width: 100%;
     }
 
-    .footer {
+    .row {
         width: 100vw;
-        gap: 10rem !important;
+        gap: 2rem !important; /* Reduced gap to prevent overflow */
     }
 
     .contact_form {
         width: 100% !important;
     }
 
-    .contact_form  *{
+    .contact_form * {
         width: 99% !important;
     }
-    
+
+    .container {
+        margin: 0 !important;
+        padding: 1rem !important;
+    }
 }
 
 @media (max-width: 1400px) {
@@ -146,16 +158,16 @@ body {
 }
 
 .card {
-    height: 60vh !important;
-    width: 22rem !important;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    text-align: center; 
-    padding: 1.5rem; 
+    text-align: center;
+    padding: 1rem;
     margin: 1rem;
+    height: auto; 
+    width: 95% !important;
 }
 
 .card-body {
