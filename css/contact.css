@@ -1,3 +1,11 @@
+input[type=text], select, textarea, .formulario-inputs{
+	width: 100%;
+	padding: 12px;
+	border: 1px;
+	border-radius: 4px;
+	box-sizing: border-box;
+	resize: vertical;
+  }
 
 .boton-form{
 	height: 45px; 
@@ -35,7 +43,7 @@ textarea{
 
 
 .formulario h1{
-	font-size: 39px;  
+	font-size: 2rem;  
 	text-align: letf; 
 	padding-bottom: 20px; 
 	color: #fffbff;
@@ -43,7 +51,7 @@ textarea{
 
 
 .formulario h3{
-	font-size: 16px; 
+	font-size: 1rem; 
 	padding-bottom: 30px;
 	color: #0D0210;   
 }
