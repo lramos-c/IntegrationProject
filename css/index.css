@@ -36,7 +36,18 @@
         width: 100% !important;
     }
 
-    .nav-component2, .acc-btn, .nav-item-top {
+    .nav-component1, .nav-component2 {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .nav-item-top {
+        max-width: 30% !important;
+    }
+    
+     .acc-btn, .nav-component2::before{
         display: none !important;
     }
 
@@ -54,6 +65,10 @@
         height: auto;
         border-radius: 5px;
         object-fit: cover; 
+    }
+    .elements
+    {
+        width: 80% !important;
     }
 
     .col {
@@ -79,16 +94,38 @@
         margin: 0 !important;
         padding: 1rem !important;
     }
+
+    .row-cols-1 {	
+        max-width: 100% !important;
+
+    }
+
+    .container *:not(.excluded-class) {
+        /* Styles for all elements inside .container except those with .excluded-class */
+    }
+
+    .cart-text {
+        visibility: hidden;
+    }
+
+    
 }
 
 @media (max-width: 1400px) {
     .container {
         max-width: 95vw !important;
     }
+    .nav {
+        max-width: 95vw;
+    }
+
 }
 
 a {
     target: blank;
+    color: #FFFBFF !important;
+    font-weight: 400;
+    font-size: 1rem;
 }
 
 * {
@@ -101,16 +138,23 @@ a {
 #header, #footer {
     background-color: #4D3147;
     color: #FFFBFF;
-    width: 100%; 
+    width: 100%;
     margin: 0 !important;
 }
 
+
 #header {
-    height: 20vh;
+    height: 20%;
 }
 
 #logo {
     height: 12vh;
+}
+
+.container {
+    width: 95vw;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
 .elements {
@@ -133,9 +177,6 @@ a {
     height: 100%;
 }
 
-a {
-    color: #FFFBFF !important;
-}
 
 body {
     background-color: #FFFBFF !important;
@@ -144,6 +185,8 @@ body {
     flex-direction: column;
     height: 100%;
     overflow-x: hidden;
+    width: 100%;
+    padding: 0;
 }
 
 .fecha {
@@ -332,7 +375,10 @@ input {
     color: #FFFBFF;
     position: absolute;
     gap: 0.5rem;
+    margin-left: 3vw ;
+
 }
+
 
 .acc-btn {
     background: none;
@@ -345,22 +391,28 @@ input {
     justify-content: center;
     padding: 0 0.5vw;
     margin-right: 0vw;
-    margin-top: 0.8vw;
+    margin-top: 1.5vw;
+    margin-bottom: 1vw !important;
 }
-.nav .nav-item-top{
-    display: inline-block;
-    padding: 0.20em .5em !important;
-    margin: 0.5em 1em !important;  
-    background-color: #866A80;  
-    border: none;
-    border-radius: 0.5rem !important;  
-    text-align: center;
-    font-size: 1rem;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem;
+    background-color: #4D3147;
 }
 
+.nav-item-top, .nav-component1, .nav-component2 {
+    padding: 0.2em 0.5em  !important;
+
+    border: none;
+    border-radius: 0.5rem !important;
+    cursor: pointer;
+    max-height: 2.5rem;
+}
 .contact_form{	
 	width: 30rem; 
     height: auto;
