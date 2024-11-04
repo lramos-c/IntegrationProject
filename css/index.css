@@ -469,3 +469,7 @@ textarea{
     display: block; 
 	float: center; 	
 }
+
+.banners{
+    margin: 20px;
+}
