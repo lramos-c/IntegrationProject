@@ -468,4 +468,26 @@ textarea{
 	float: center; 	
 }
 
+/* CARRITO*/
+@media (max-width: 768px) {
+    .cart-btn span:last-child { 
+        display: none; /* Ocultar la palabra 'Carrito' en móviles */
+    }
 
+    /* .cart-btn {
+        width: 100%; /* Hacer que el botón sea responsivo 
+        max-width: 500px; Opcional: limitar el ancho máximo 
+    } */
+
+    .cart-btn span:first-child {
+        font-size: 2rem; /* Aumentar el tamaño del icono si es necesario */
+    }
+.banners{
+    margin: 20px;
+}
+
+.iconsFooter{
+    filter: invert(90%);
+
+}
+}
