@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script defer src="/pages/JavaScript/contacto.js"></script>
+    <script defer src="/pages/JavaScript/legal.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
@@ -67,16 +68,16 @@
         <!-- Box para Políticas -->
         <div class="box">
             <h2><i class="fas fa-book"></i> Políticas de la librería</h2>
-            <ul>
-                <li>&gt; Términos y condiciones</li>
-                <li>&gt; Políticas de privacidad</li>
-                <li>&gt; Políticas de devoluciones y reembolsos</li>
-                <li>&gt; Políticas de envíos</li>
-                <li>&gt; Políticas de cookies</li>
-                <li>&gt; Propiedad intelectual</li>
-                <li>&gt; Seguridad de pagos</li>
-                <li>&gt; Derechos de consumidores</li>
-                <li>&gt; Contacto de asuntos legales</li>
+            <ul class="terminos">
+                <li data-section="tyc">&gt; Términos y condiciones</li>
+                <li data-section="privacidad">&gt; Políticas de privacidad</li>
+                <li data-section="devolucion">&gt; Políticas de devoluciones y reembolsos</li>
+                <li data-section="envios">&gt; Políticas de envíos</li>
+                <li data-section="">&gt; Políticas de cookies</li>
+                <li data-section="">&gt; Propiedad intelectual</li>
+                <li data-section="">&gt; Seguridad de pagos</li>
+                <li data-section="">&gt; Derechos de consumidores</li>
+                <li data-section="">&gt; Contacto de asuntos legales</li>
             </ul>
         </div>
 
@@ -91,7 +92,7 @@
         </div>
     </aside>
 
-    <section class="content">
+    <section class="content" id="content">
         <h2>Términos y condiciones</h2>
         <ol>
             <li><strong>Aceptación de los Términos</strong></li>
