@@ -30,6 +30,17 @@ const email = document.getElementById("email");
         }
     });
 
+//Validacion de telefono
+    const telefono = document.getElementById("telefono");
+    telefono.addEventListener("input", function() {
+        if (!isNaN(telefono.value) && telefono.value.trim() !== "") {
+            document.getElementById("telefonoError").innerText = "";
+        } else {
+            document.getElementById("telefonoError").innerText = "Introduzca solo números";
+        }
+    });
+    
+
 // validacion de maximo de caracteres en Mensaje
 const asunto = document.getElementById("asunto");
 const asuntoMax = 50; //maximo de caracteres
