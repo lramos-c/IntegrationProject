@@ -473,3 +473,7 @@ textarea{
 .banners{
     margin: 20px;
 }
+
+.iconsFooter{
+    filter: invert(90%);
+}

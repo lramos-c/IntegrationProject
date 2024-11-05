@@ -78,3 +78,7 @@ textarea{
 	outline:0;
 	border: 1px solid #C9B7C7;
 }
+
+.iconsFooter{
+    filter: invert(90%);
+}
