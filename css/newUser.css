@@ -7,6 +7,22 @@ input[type=text], select, textarea, .form-group{
 	resize: vertical;
   }
 
+  /* Para PC y Mac */
+  #flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+  /* Responsivo para mobiles, tendría que hacer dos filas en vez de dos columnas */
+  }
+
+  @media (max-width: 800px) {
+    #flex-container {
+        flex-direction: column;
+    }
+  }
+
+
   .contact_form h2{
 	font-size: 2rem;  
 	text-align: letf; 
