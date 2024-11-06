@@ -8,6 +8,7 @@
     margin: 20px ;
     padding: 20px;
     gap: 20px;
+    flex-wrap: wrap;
 }
 .form-section {
     flex: 1;
@@ -16,6 +17,8 @@
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
 }
 .form-section h2 {
     font-size: 1.5em;
@@ -35,8 +38,8 @@
     box-sizing: border-box;
 }
 .form-section button {
-    width: 48%;
-    margin-top: 15px;
+    width: 100%;
+    margin-top: 10px;
     padding: 10px;
     border: none;
     color: #efefef;
@@ -54,6 +57,8 @@
 .list-section {
     flex: 2;
     padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 .list-section h2 {
     font-size: 1.5em;
@@ -62,7 +67,7 @@
 
 #book-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 4fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 20px;
     list-style: none;
     padding: 0;
@@ -115,4 +120,48 @@
     background-color: #efcbf1;
     transform: scale(1.05);
     border: 2px solid #33055d;
+}
+
+
+
+ /* estilos pantallas medianas */
+@media (max-width: 768px) {
+    .container-admin {
+        flex-direction: column; 
+        gap:10px;
+    }
+
+    .form-section {
+        padding: 15px; 
+    }
+
+    #book-list {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+    }
+
+    .form-section button {
+        width: 100%; 
+        margin-top: 10px;
+    }
+}
+
+/*  pantallas  pequeñas*/
+@media (max-width: 480px) {
+    .container-admin{
+        flex-direction: column;
+    }
+    .form-section {
+        padding: 10px; 
+        width:100%;
+    }
+
+    #book-list {
+        grid-template-columns: 1fr; 
+        gap: 10px;
+    }
+
+    .form-section button {
+        width: 100%;  
+        margin-top: 10px;
+    }
 }

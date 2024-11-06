@@ -3,9 +3,60 @@
         width: 100vw;
     }
 
-    #footer {
-        gap: 2rem !important;
-    }
+   
+
+        #header, #footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+        
+        #header, #footer .col {
+            flex: 1;
+            min-width: 200px; /* Asegura que las columnas no sean demasiado estrechas en pantallas pequeñas */
+            margin-bottom: 15px;
+        }
+        
+        /* Ajustes para pantallas pequeñas */
+        @media (max-width: 768px) {
+            #footer {
+                display: flex;
+                flex-direction: column; /* Coloca los elementos en una sola columna */
+                align-items: center; /* Centra los elementos */
+            }
+            #header, #footer .col {
+                flex: none;
+                width: 100%; /* Las columnas ocupan todo el ancho en pantallas pequeñas */
+            }
+        
+            /* Ajuste de iconos */
+            .iconos-redes img {
+                width: 25px; /* Reducir tamaño de los iconos en pantallas pequeñas */
+                height: 25px;
+                margin: 5px;
+            }
+        
+            /* Ajustar tamaño de los enlaces de texto */
+            #header, #footer .nav-item a {
+                font-size: 14px;
+            }
+        }
+        
+        /* Para pantallas aún más pequeñas, como en teléfonos con pantallas de 320px o menos */
+        @media (max-width: 480px) {
+            #header, #footer {
+                padding: 15px 0; /* Reducir espacio en pantallas muy pequeñas */
+            }
+        
+            .iconos-redes img {
+                width: 20px; /* Aún más pequeño */
+                height: 20px;
+            }
+        }
+
+
+       
 
     .body {
         width: 100%;
@@ -326,6 +377,7 @@ input {
 .search-bar-container {
     display: flex;
     align-items: center;
+    justify-content:space-between ;
     width: 45vw;
     background-color: #C9B7C7;
     border-radius: 2.5rem;
@@ -490,4 +542,5 @@ textarea{
     filter: invert(90%);
 
 }
+
 }
