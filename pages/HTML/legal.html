@@ -87,13 +87,20 @@
         <div class="box">
             <h3><i class="fas fa-headset"></i> Contacto de ayuda</h3>
             <ul>
-                <li><i class="fas fa-clock"></i> Horario</li>
-                <li><i class="fas fa-envelope"></i> Escríbenos</li>
-                <li><i class="fas fa-phone"></i> Llámanos</li>
+                <li data-info="horario-info"><i class="fas fa-clock"></i> Horario</li>
+                <li data-info="escritos-info"><i class="fas fa-envelope"></i> Escríbenos</li>
+                <li data-info="llamanos-info"><i class="fas fa-phone"></i> Llámanos</li>
             </ul>
         </div>
+        <div>
+        <div class="message-box" id="message-box"></div>
+    </div>
+
+
     </aside>
 
+
+        
     <section class="content" id="content">
         <h2>Términos y condiciones</h2>
         <ol>
@@ -128,6 +135,9 @@
         </ol>
     </section>
 </div>
+
+     <!-- Contenedor para mostrar el mensaje dinámico -->
+     
 
     <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top" id="footer">
         <div class="col mb-3">
