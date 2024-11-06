@@ -525,3 +525,7 @@ form.dropdown-menu {
     filter: invert(90%);
 }
 
+.iconsFooter:hover{
+    scale: 1.1;
+}
+
