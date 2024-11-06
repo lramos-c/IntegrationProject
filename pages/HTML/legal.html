@@ -73,13 +73,13 @@
             <ul class="terminos">
                 <li data-section="tyc">&gt; Términos y condiciones</li>
                 <li data-section="privacidad">&gt; Políticas de privacidad</li>
-                <li data-section="devolucion">&gt; Políticas de devoluciones y reembolsos</li>
+                <li data-section="devolucion">&gt; Políticas de reembolsos y devoluciones.</li>
                 <li data-section="envios">&gt; Políticas de envíos</li>
-                <li data-section="">&gt; Políticas de cookies</li>
-                <li data-section="">&gt; Propiedad intelectual</li>
-                <li data-section="">&gt; Seguridad de pagos</li>
-                <li data-section="">&gt; Derechos de consumidores</li>
-                <li data-section="">&gt; Contacto de asuntos legales</li>
+                <li data-section="cookies">&gt; Políticas de cookies</li>
+                <li data-section="intelectual">&gt; Propiedad intelectual</li>
+                <li data-section="pagos">&gt; Seguridad de pagos</li>
+                <li data-section="consumidores">&gt; Derechos de consumidores</li>
+                <li data-section="asuntos">&gt; Contacto de asuntos legales</li>
             </ul>
         </div>
 
@@ -87,13 +87,20 @@
         <div class="box">
             <h3><i class="fas fa-headset"></i> Contacto de ayuda</h3>
             <ul>
-                <li><i class="fas fa-clock"></i> Horario</li>
-                <li><i class="fas fa-envelope"></i> Escríbenos</li>
-                <li><i class="fas fa-phone"></i> Llámanos</li>
+                <li data-info="horario-info"><i class="fas fa-clock"></i> Horario</li>
+                <li data-info="escritos-info"><i class="fas fa-envelope"></i> Escríbenos</li>
+                <li data-info="llamanos-info"><i class="fas fa-phone"></i> Llámanos</li>
             </ul>
         </div>
+        <div>
+        <div class="message-box" id="message-box"></div>
+    </div>
+
+
     </aside>
 
+
+        
     <section class="content" id="content">
         <h2>Términos y condiciones</h2>
         <ol>
@@ -129,17 +136,20 @@
     </section>
 </div>
 
+     <!-- Contenedor para mostrar el mensaje dinámico -->
+     
+
     <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top" id="footer">
         <div class="col mb-3">
           <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
           </a>
          <div class="iconos-redes"> 
-          <img src="/assets/Icons/facebook.png" alt="" class="iconsFooter">
-          <img src="/assets/Icons/instagram.png" alt="" class="iconsFooter">
-          <img src="/assets/Icons/twitter.png" alt="" class="iconsFooter">
+          <a href="https://www.facebook.com/"><img src="/assets/Icons/facebook.png" alt="Icono Facebook" class="iconsFooter"></a>
+          <a href="https://www.instagram.com/"><img src="/assets/Icons/instagram.png" alt="Icono Instagram" class="iconsFooter"></a>
+          <a href="https://x.com"><img src="/assets/Icons/twitter.png" alt="Icono Twitter" class="iconsFooter"></a>
          </div>
-          <p class="fecha">© 2024</p>
+          <p class="fecha">Librería de Alejandría© 2024</p>
         </div>
       
     
