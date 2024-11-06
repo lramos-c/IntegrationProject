@@ -41,9 +41,59 @@ function cambiarContenido(section){
         
         </ol>`;
     } else if (section==='privacidad'){
-        contenido.innerHTML=`<h2>Lorem</h2>
-        <p>Lorem ipsum cosas en latin bien chidas y profundas. </p>
-        `;
+        contenido.innerHTML=`<h2>Política de Privacidad de Librería De Alejandría</h2>
+        <p>Respetamos y protegemos tu privacidad. Esta política de privacidad explica cómo recopilamos, usamos, almacenamos y protegemos tu información personal cuando visitas nuestro sitio web o realizas compras en línea. Al utilizar nuestros servicios, aceptas las prácticas descritas en esta política.</p>
+
+        <ol>
+            <li><strong>Información que Recopilamos</strong></li>
+            <p>Recopilamos la siguiente información cuando utilizas nuestro sitio web:</p>
+            <ul>
+                <li><strong>Información personal</strong>: Nombre, dirección de correo electrónico, dirección de envío, número de teléfono y detalles de pago (como número de tarjeta de crédito).</li>
+                <li><strong>Información de navegación</strong>: Datos relacionados con tu navegación en nuestro sitio, como la dirección IP, tipo de dispositivo, navegador, páginas visitadas, etc.</li>
+            </ul>
+
+            <li><strong>Uso de la Información</strong></li>
+            <p>Usamos la información recopilada para los siguientes fines:</p>
+            <ul>
+                <li>Procesar y gestionar tus pedidos.</li>
+                <li>Enviar confirmaciones de pedidos, actualizaciones de estado y otros mensajes relacionados con tu compra.</li>
+                <li>Mejorar la experiencia del usuario en nuestro sitio web.</li>
+                <li>Personalizar el contenido y las ofertas según tus preferencias.</li>
+                <li>Proteger nuestra tienda en línea de fraudes y transacciones sospechosas.</li>
+                <li>Enviarte información sobre nuevos productos, ofertas especiales y novedades de nuestra librería (si has optado por recibir comunicaciones).</li>
+            </ul>
+
+            <li><strong>Compartir la Información</strong></li>
+            <p>No compartimos, vendemos ni alquilamos tu información personal a terceros para fines comerciales. Sin embargo, podemos compartir tu información con terceros en los siguientes casos:</p>
+            <ul>
+                <li><strong>Proveedores de servicios</strong>: Podemos compartir tu información con empresas de servicios externos (como plataformas de pago, empresas de envío) para procesar y enviar tus pedidos.</li>
+                <li><strong>Por razones legales</strong>: Podemos compartir tu información si así lo exige la ley o si es necesario para proteger nuestros derechos, propiedades o seguridad.</li>
+            </ul>
+
+            <li><strong>Protección de la Información</strong></li>
+            <p>Implementamos medidas de seguridad para proteger tu información personal contra el acceso no autorizado, la divulgación, la alteración o la destrucción. Usamos tecnología de encriptación SSL para proteger los datos de pago durante las transacciones en línea.</p>
+
+            <li><strong>Cookies</strong></li>
+            <p>Utilizamos cookies y tecnologías similares para mejorar tu experiencia de navegación en nuestro sitio web. Las cookies nos permiten recordar tus preferencias y ofrecerte contenido personalizado. Puedes configurar tu navegador para rechazar las cookies, pero ten en cuenta que algunas funciones del sitio podrían no funcionar correctamente si lo haces.</p>
+
+            <li><strong>Derechos de los Usuarios</strong></li>
+            <p>Tienes derecho a acceder, corregir, actualizar o eliminar tu información personal. Si deseas ejercer alguno de estos derechos o tienes preguntas sobre cómo manejamos tu información, puedes contactarnos a través de los canales proporcionados más abajo.</p>
+
+            <li><strong>Conservación de los Datos</strong></li>
+            <p>Conservamos tu información personal durante el tiempo necesario para cumplir con los fines establecidos en esta política, a menos que la ley nos exija o permita retenerla por más tiempo.</p>
+
+            <li><strong>Enlaces a Sitios Externos</strong></li>
+            <p>Este sitio web puede contener enlaces a otros sitios externos que no están bajo nuestro control. No somos responsables de las prácticas de privacidad de estos sitios, por lo que te recomendamos leer sus políticas de privacidad antes de proporcionarles tu información personal.</p>
+
+            <li><strong>Cambios en la Política de Privacidad</strong></li>
+            <p>Podemos actualizar nuestra política de privacidad de vez en cuando. Cualquier cambio será publicado en esta página con la fecha de revisión. Te recomendamos que revises esta página regularmente para estar informado sobre cómo protegemos tu privacidad.</p>
+        </ol>
+
+        <p><strong>¿Tienes preguntas sobre nuestra política de privacidad?</strong></p>
+        <p>Si tienes preguntas o inquietudes sobre nuestra política de privacidad o sobre cómo manejamos tus datos personales, no dudes en contactarnos.</p>
+
+        <p>Gracias por confiar en <strong>Librería de Alejandría</strong>. Tu privacidad y seguridad son nuestras prioridades.</p>
+                `;
     }else if (section==='devolucion'){
         contenido.innerHTML=`<h2>Políticas de reembolsos y devoluciones.</h2>
     <p>Gracias por elegir a <strong>Librería de Alejandría</strong>. Nos importa tu satisfacción y queremos que disfrutes de cada compra. Si por alguna razón no estás completamente feliz con tu pedido, te ofrecemos un proceso claro y sencillo para devoluciones y reembolsos, bajo las siguientes condiciones:</p>
@@ -102,14 +152,56 @@ function cambiarContenido(section){
         </ul>
     </ol>
 
-    <p>Nuestro equipo de atención al cliente está disponible para ayudarte:</p>
+    <p>Nuestro equipo de atención al cliente está disponible para ayudarte.</p>
     <p>Gracias por confiar en <strong>Librería de Alejandría</strong>. ¡Que disfrutes de tu lectura!</p>
             
         `;
     }else if (section==='envios'){
-        contenido.innerHTML=`<h2>Lorem</h2>
-        <p>Lorem ipsum cosas en latin bien chidas y profundas. </p>
-        `;
+        contenido.innerHTML=`<h2>Política de Envíos de Librería De Alejandría</h2>
+        <p>Nos aseguramos de que tu experiencia de compra sea lo más conveniente posible. A continuación, te proporcionamos toda la información necesaria sobre nuestras políticas de envío para que puedas conocer cómo procesamos y enviamos tus pedidos.</p>
+
+        <ol>
+            <li><strong>Procesamiento de Pedidos</strong></li>
+            <p>Todos los pedidos realizados en nuestro sitio web se procesan de lunes a viernes, excepto en días festivos. Una vez que realizas tu compra, recibirás un correo electrónico de confirmación con los detalles de tu pedido. Los tiempos de procesamiento pueden variar dependiendo de la disponibilidad del producto y de la carga de pedidos en ese momento.</p>
+
+            <li><strong>Opciones de Envío</strong></li>
+            <p>Ofrecemos varias opciones de envío para adaptarnos a tus necesidades. Estas son las opciones disponibles:</p>
+            <ul>
+                <li><strong>Envío Estándar:</strong> Este es el método más económico, y generalmente toma entre 5 y 7 días hábiles para llegar a tu dirección. El costo de este envío varía según la ubicación de entrega.</li>
+                <li><strong>Envío Express:</strong> Este servicio es más rápido y garantiza la entrega en 2-3 días hábiles, dependiendo de tu ubicación. Tiene un costo adicional que se calcula durante el proceso de pago.</li>
+            </ul>
+
+            <li><strong>Costos de Envío</strong></li>
+            <p>Los costos de envío se calculan en función del peso y las dimensiones del paquete, así como de la ubicación de entrega. El costo final del envío se mostrará en el proceso de pago antes de que confirmes tu pedido.</p>
+        
+            <li><strong>Confirmación y Seguimiento del Envío</strong></li>
+            <p>Una vez que tu pedido haya sido enviado, recibirás un correo electrónico con el número de seguimiento y un enlace para que puedas rastrear tu paquete en tiempo real.</p>
+
+            <li><strong>Dirección de Envío</strong></li>
+            <p>Es importante que proporciones una dirección de envío correcta y completa para evitar retrasos o problemas con la entrega. Si proporcionas una dirección incorrecta, no seremos responsables de los retrasos o pérdidas en el envío.</p>
+
+            <li><strong>Retrasos en el Envío</strong></li>
+            <p>Aunque trabajamos con empresas de transporte confiables, no podemos garantizar tiempos exactos de entrega, especialmente durante períodos de alta demanda, como las fiestas. Si tu pedido experimenta un retraso, por favor contáctanos para obtener más información.</p>
+
+            <li><strong>Envíos a P.O. Boxes</strong></li>
+            <p>No realizamos envíos a apartados postales (P.O. Boxes) en este momento. Te recomendamos proporcionar una dirección física para asegurar la entrega exitosa de tu pedido.</p>
+
+
+            <li><strong>Problemas con el Envío</strong></li>
+            <p>Si tu pedido no ha llegado dentro del tiempo estimado o tienes algún problema con el envío (como daños o pérdida), por favor contacta con nuestro equipo de atención al cliente para que podamos ayudarte a resolverlo.</p>
+            
+            <li><strong>Política de Devoluciones por Envío</strong></li>
+            <p>Si recibes un producto dañado o incorrecto, por favor contacta con nosotros dentro de los primeros 7 días desde la recepción del paquete. Nos encargaremos de organizar un reemplazo o reembolso, dependiendo de la situación.</p>
+
+            <li><strong>Cambios en la Política de Envíos</strong></li>
+            <p>Podemos actualizar esta política de envíos de vez en cuando, por lo que te recomendamos revisar esta página periódicamente para estar al tanto de cualquier cambio en nuestras condiciones.</p>
+        </ol>
+
+        <p><strong>¿Tienes preguntas sobre el envío de tu pedido?</strong></p>
+        <p>Si tienes alguna duda sobre nuestros servicios de envío o necesitas más información, no dudes en contactarnos.</p>
+
+        <p>Gracias por elegir <strong>Libreria de Alejandría</strong>. Nos esforzamos por hacer que tu experiencia de compra sea lo más sencilla y segura posible.</p>
+                `;
     }else if (section==='cookies'){
         contenido.innerHTML=`<h2>Política de Cookies de Librería de Alejandría</h2>
         <p>En <strong>Librería de Alejandría</strong> valoramos tu privacidad y nos comprometemos a protegerla. Esta política de cookies explica cómo usamos las cookies y tecnologías similares para mejorar tu experiencia en nuestro sitio web.</p>
@@ -168,9 +260,49 @@ function cambiarContenido(section){
         
         `;
     }else if (section==='intelectual'){
-        contenido.innerHTML=`<h2>Lorem</h2>
-        <p>Lorem ipsum cosas en latin bien chidas y profundas. </p>
-        `;
+        contenido.innerHTML=`<h2>Política de Propiedad Intelectual de Librería De Alejandría</h2>
+        <p>Respetamos y protegemos los derechos de propiedad intelectual, tanto nuestros como de terceros. Esta política detalla cómo gestionamos los derechos de autor, marcas registradas y otros derechos de propiedad relacionados con los contenidos disponibles en nuestro sitio web.</p>
+
+        <ol>
+            <li><strong>Derechos de Autor</strong></li>
+            <p>Todo el contenido presente en este sitio web, incluidos textos, imágenes, gráficos, logotipos, iconos, videos, bases de datos y software, está protegido por derechos de autor y otros derechos de propiedad intelectual. Estos derechos son propiedad de <strong>Librería de Alejandría</strong> o de sus respectivos titulares.</p>
+            <p>La reproducción, distribución, modificación, exhibición pública, y cualquier otra forma de explotación de este contenido está prohibida, excepto cuando se cuente con autorización expresa de <strong>Librería de Alejandría</strong> o del titular de los derechos.</p>
+
+            <li><strong>Marcas Registradas</strong></li>
+            <p>Las marcas y logotipos utilizados en este sitio web, incluidos <strong>Librería de Alejandría</strong> y otros signos distintivos, están protegidos por las leyes de marcas registradas. No está permitido el uso de estas marcas sin el consentimiento previo por escrito de <strong>Librería de Alejandría</strong> o del titular correspondiente.</p>
+
+            <li><strong>Licencia de Uso</strong></li>
+            <p>Al acceder a nuestro sitio web, <strong>Librería de Alejandría</strong> otorga una licencia limitada, no exclusiva, revocable y no transferible para visualizar y hacer uso de los contenidos de este sitio solo para fines personales y no comerciales. Queda expresamente prohibido copiar, distribuir, modificar o reproducir cualquier contenido sin la debida autorización.</p>
+
+            <li><strong>Responsabilidad por el Uso No Autorizado</strong></li>
+            <p>El uso no autorizado del contenido de <strong>Librería de Alejandría</strong> puede dar lugar a reclamaciones legales, incluidas demandas por violación de derechos de autor, marcas registradas y otros derechos de propiedad intelectual. Nos reservamos el derecho de tomar las acciones legales necesarias para proteger nuestros derechos y los de los titulares de los derechos de propiedad intelectual relacionados.</p>
+
+            <li><strong>Contenido de Usuarios</strong></li>
+            <p>Si los usuarios del sitio web de <strong>Librería de Alejandría</strong> cargan o publican contenido (como comentarios, reseñas o material en el foro), otorgan a <strong>Librería de Alejandría</strong> una licencia no exclusiva, mundial, libre de regalías y transferible para usar, modificar, reproducir y distribuir dicho contenido en cualquier medio.</p>
+            <p>El usuario garantiza que el contenido que publica no infringe los derechos de propiedad intelectual de terceros, y se compromete a indemnizar a <strong>Librería de Alejandría</strong> por cualquier reclamación derivada del uso no autorizado de dicho contenido.</p>
+
+            <li><strong>Notificación de Infracción</strong></li>
+            <p>Si consideras que cualquier contenido en nuestro sitio web infringe tus derechos de propiedad intelectual, te invitamos a notificarnos de inmediato. Por favor, envíanos un correo electrónico a [correo@libreriadealejandria.com] con los siguientes datos:</p>
+            <ul>
+                <li>Una descripción detallada del contenido que se considera infractor.</li>
+                <li>Una declaración en la que confirmes que eres el titular de los derechos de autor o que actúas en nombre del titular.</li>
+                <li>Un enlace o dirección URL donde se encuentra el contenido infractor en nuestro sitio web.</li>
+                <li>Una declaración de buena fe que indique que consideras que el uso del contenido infractor no está autorizado por el propietario de los derechos, su representante o la ley.</li>
+                <li>Tu firma electrónica o física.</li>
+            </ul>
+
+            <li><strong>Enlaces a Terceros</strong></li>
+            <p>En nuestro sitio web pueden existir enlaces a sitios de terceros, los cuales están sujetos a sus propias políticas de propiedad intelectual. <strong>Librería de Alejandría</strong> no se hace responsable de la exactitud, legalidad o cualquier otro aspecto relacionado con el contenido de estos sitios de terceros.</p>
+
+            <li><strong>Modificaciones a la Política de Propiedad Intelectual</strong></li>
+            <p><strong>Librería de Alejandría</strong> se reserva el derecho de modificar esta política de propiedad intelectual en cualquier momento, sin previo aviso. Cualquier cambio será publicado en esta página, y la fecha de la última actualización se indicará al final de este documento. Te recomendamos revisar esta política periódicamente.</p>
+        </ol>
+
+        <p><strong>¿Tienes preguntas sobre nuestros derechos de propiedad intelectual?</strong></p>
+        <p>Si tienes alguna duda o pregunta sobre nuestros derechos de propiedad intelectual o sobre cómo puedes utilizar el contenido de <strong>Librería de Alejandría</strong>, no dudes en contactarnos.</p>
+
+        <p>Gracias por visitar <strong>De Alejandría</strong>. Tu respeto por los derechos de propiedad intelectual es fundamental para que podamos seguir ofreciendo contenido de calidad.</p>
+                `;
     }else if (section==='pagos'){
         contenido.innerHTML=`<h2>Política de Seguridad de Pagos</h2>
         <p> Nos tomamos muy en serio la seguridad de tus datos y pagos. Queremos que tengas la tranquilidad de que tu información personal y financiera está protegida en todo momento mientras realizas compras en nuestro sitio web.</p>
@@ -229,9 +361,53 @@ function cambiarContenido(section){
         <p>Gracias por confiar en <strong>Librería de Alejandría</strong>. Tu seguridad y satisfacción son nuestras principales prioridades.</p>
         `;
     }else if (section==='consumidores'){
-        contenido.innerHTML=`<h2>Lorem</h2>
-        <p>Lorem ipsum cosas en latin bien chidas y profundas. </p>
-        `;
+        contenido.innerHTML=`<h2>Política de Derechos de los Consumidores de Librería De Alejandría</h2>
+        <p>Nos comprometemos a cumplir con las leyes de protección al consumidor y a asegurar que nuestros clientes tengan una experiencia de compra segura y satisfactoria. Esta política describe los derechos de los consumidores que adquieren productos a través de nuestro sitio web.</p>
+
+        <ol>
+            <li><strong>Derecho a la Información</strong></li>
+            <p>Como consumidor, tienes el derecho a recibir información clara y comprensible sobre los productos que compras, incluidos los detalles del precio, características, disponibilidad y las condiciones de entrega.</p>
+            <p>Asegúrate de leer las descripciones de productos y las condiciones de compra antes de realizar cualquier pedido. Si tienes dudas sobre un producto, no dudes en contactar con nuestro servicio de atención al cliente.</p>
+
+            <li><strong>Derecho a la Protección en Caso de Producto Defectuoso</strong></li>
+            <p>Si recibes un producto defectuoso, dañado o que no se corresponde con lo que pediste, tienes derecho a solicitar la devolución, el reemplazo o el reembolso del mismo. El plazo para notificar productos defectuosos o erróneos es de 30 días a partir de la recepción del pedido.</p>
+            <p>Para hacer uso de este derecho, contacta con nuestro equipo de atención al cliente a través de [correo electrónico] o [número de teléfono].</p>
+
+            <li><strong>Derecho de Desistimiento</strong></li>
+            <p>De acuerdo con las leyes de protección al consumidor, tienes derecho a cancelar tu pedido en un plazo de 14 días naturales desde la recepción del producto, sin necesidad de justificar tu decisión. Este derecho se aplica a productos no abiertos y no utilizados.</p>
+            <p>Si deseas hacer uso de este derecho, por favor, sigue el procedimiento de devolución que te indicaremos tras contactar con nuestro servicio de atención al cliente. Los costos de envío para la devolución serán a tu cargo, salvo que el producto haya llegado defectuoso o incorrecto.</p>
+
+            <li><strong>Condiciones para el Ejercicio del Derecho de Desistimiento</strong></li>
+            <p>Para ejercer tu derecho de desistimiento, debes devolver los productos en su estado original, sin abrir ni usar. El producto debe estar en su embalaje original y con todos los accesorios incluidos. Si no se cumplen estas condiciones, no podremos procesar la devolución ni ofrecerte un reembolso.</p>
+
+            <li><strong>Reembolsos</strong></li>
+            <p>Una vez que hayamos recibido el producto devuelto y hayamos comprobado su estado, procederemos a realizar el reembolso. El reembolso se efectuará utilizando el mismo método de pago que usaste en la compra original.</p>
+            <p>Los reembolsos pueden tardar hasta 14 días hábiles desde que recibimos el producto devuelto. Recibirás un correo electrónico de confirmación una vez que se haya procesado el reembolso.</p>
+
+            <li><strong>Derechos de Garantía</strong></li>
+            <p>Si el producto adquirido tiene un defecto de fabricación o presenta fallos durante un uso normal, tienes derecho a una garantía legal que cubre reparaciones, reemplazos o reembolsos según sea necesario. El plazo de la garantía varía según el tipo de producto, pero generalmente es de 2 años a partir de la fecha de compra.</p>
+            <p>Para hacer uso de la garantía, contacta con nuestro servicio de atención al cliente para obtener instrucciones sobre cómo proceder.</p>
+
+            <li><strong>Protección de Datos Personales</strong></li>
+            <p>Tu privacidad es nuestra prioridad. Toda la información personal que proporciones durante el proceso de compra será utilizada exclusivamente para procesar tu pedido y gestionarlo adecuadamente. Nunca compartiremos tu información con terceros sin tu consentimiento, excepto cuando sea necesario para completar el proceso de compra (como con proveedores de servicios de pago).</p>
+
+            <li><strong>Servicio de Atención al Cliente</strong></li>
+            <p>En caso de que necesites asistencia, dudas o tengas algún reclamo, puedes ponerte en contacto con nuestro equipo de atención al cliente. Estamos disponibles para resolver cualquier inconveniente y ayudarte a disfrutar de una experiencia de compra sin problemas.</p>
+            <ul>
+                <li>Correo electrónico: <strong>[correo@libreriadealejandria.com]</strong></li>
+                <li>Teléfono: <strong>[número de contacto]</strong></li>
+            </ul>
+
+            <li><strong>Actualización de la Política de Derechos de los Consumidores</strong></li>
+            <p>Podemos actualizar esta política en cualquier momento para reflejar cambios en las leyes de protección al consumidor, en nuestras prácticas comerciales o por razones operativas. Los cambios se publicarán en esta página con la fecha de la última actualización.</p>
+            <p>Te recomendamos revisar periódicamente esta política para estar al tanto de tus derechos como consumidor.</p>
+        </ol>
+
+        <p><strong>¿Tienes preguntas sobre tus derechos como consumidor?</strong></p>
+        <p>Si tienes alguna duda sobre tus derechos, no dudes en ponerte en contacto con nuestro equipo de atención al cliente para obtener más información.</p>
+
+        <p>Gracias por confiar en <strong>Librería de Alejandría</strong>. Nos importa tu satisfacción y trabajamos para ofrecerte un servicio de calidad y protección en todo momento.</p>
+                `;
     }else if (section==='asuntos'){
         contenido.innerHTML=`<h2>Política de Contacto para Asuntos Legales </h2>
         <p>Cumplimiento de la ley y la protección de los derechos de nuestros clientes y colaboradores. Si tienes alguna pregunta, inquietud o necesitas presentar algún asunto legal relacionado con nuestros productos, servicios o la operativa de nuestro sitio web, te proporcionamos la siguiente información sobre cómo ponerte en contacto con nosotros.</p>
@@ -278,7 +454,7 @@ function cambiarContenido(section){
             </ul>
 
             <li><strong>Resolución de Disputas</strong></li>
-            <p>Si tienes un problema legal con <strong>Librería De Alejandría </strong>que no puede resolverse de manera informal, te alentamos a que intentes resolver la disputa mediante negociación directa. En caso de que no sea posible llegar a un acuerdo, las disputas serán resueltas conforme a las leyes aplicables en México, y las partes se someten a la jurisdicción de los tribunales competentes de dicha localidad.</p>
+            <p>Si tienes un problema legal con <strong>Librería de Alejandría </strong>que no puede resolverse de manera informal, te alentamos a que intentes resolver la disputa mediante negociación directa. En caso de que no sea posible llegar a un acuerdo, las disputas serán resueltas conforme a las leyes aplicables en México, y las partes se someten a la jurisdicción de los tribunales competentes de dicha localidad.</p>
 
             <li><strong>Protección de Datos Personales y Cumplimiento con la Ley</strong></li>
             <p>Nos comprometemos a proteger tu privacidad y a cumplir con todas las leyes aplicables de protección de datos personales. Cualquier asunto relacionado con el tratamiento de tus datos personales debe ser notificado de acuerdo con nuestra <strong>Política de privacidad</strogn>.
@@ -291,8 +467,40 @@ function cambiarContenido(section){
         <p>Si tienes alguna pregunta o inquietud relacionada con un asunto legal, no dudes en ponerte en contacto con nosotros utilizando los medios proporcionados. Estamos aquí para ayudarte a resolver cualquier problema de manera justa y profesional.</p>
 
 
-        <p>Gracias por confiar en <strong>De Alejandría</strong>. Nos esforzamos por ofrecerte un servicio justo, transparente y conforme a la ley.</p>
+        <p>Gracias por confiar en <strong>Librería de Alejandría</strong>. Nos esforzamos por ofrecerte un servicio justo, transparente y conforme a la ley.</p>
             
         `;
     }
 }
+
+
+// Seleccionamos los elementos li dentro del "Contacto de ayuda"
+const contactoItems = document.querySelectorAll(".box ul li");
+
+// El contenedor donde se mostrará el mensaje
+const messageBox = document.getElementById("message-box");
+
+// Función para mostrar el contenido en el mensaje debajo de la lista
+function mostrarMensaje(mensaje) {
+    messageBox.innerHTML = mensaje; // Insertamos el mensaje en el contenedor
+    messageBox.style.display = 'block'; // Mostramos el recuadro
+}
+
+// Añadimos un evento de clic para cada item de la lista
+contactoItems.forEach(item => {
+    item.addEventListener("click", () => {
+        const infoId = item.getAttribute("data-info");
+
+        // Mensajes para cada opción
+        const mensajes = {
+            "horario-info": "<p>Estamos disponibles de lunes a viernes, de 9:00 AM a 6:00 PM.</p>",
+            "escritos-info": "<p>Escríbenos a: contacto@libreria.com</p>",
+            "llamanos-info": "<p>Llámanos al: +34 123 456 789</p>"
+        };
+
+        // Si el valor del 'data-info' tiene un mensaje, mostramos el recuadro debajo
+        if (mensajes[infoId]) {
+            mostrarMensaje(mensajes[infoId]);
+        }
+    });
+});
