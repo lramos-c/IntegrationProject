@@ -32,6 +32,13 @@ document.getElementById('registroForm').addEventListener('submit', function (eve
       errores.push("El formato del correo electrónico no es válido.");
     }
   
+    //Verificación de correo duplicado
+    const usuarios = JSON.parse(localStorage.getItem("Usuarios")) || [];
+    const usuarioExistente = usuarios.find(user => user.email === email);
+    if (usuarioExistente) {
+      errores.push("Este correo electrónico ya está registrado.");
+    }
+
     // Validación de contraseña
     if (password !== confirmPassword) {
       errores.push("Las contraseñas no coinciden.");
@@ -56,22 +63,83 @@ document.getElementById('registroForm').addEventListener('submit', function (eve
       // Mostrar el objeto JSON en consola (o hacer algo con él)
       console.log("Usuario registrado:", JSON.stringify(usuario));
   
-      // Guardar los datos en LocalStorage usando JSON del usuario
-      localStorage.setItem("Usuario", JSON.stringify(usuario));
+       // Obtener usuarios existentes, o crear un array vacío si no hay ninguno
+    const usuarios = JSON.parse(localStorage.getItem("Usuarios")) || [];
 
-      // // Recuperar los datos de LocalStorage
+    // Agregar el nuevo usuario al array
+    usuarios.push(usuario);
+
+     // Guardar los datos en LocalStorage usando JSON del usuario
+      localStorage.setItem("Usuarios", JSON.stringify(usuarios));
+
+     // Recuperar los datos de LocalStorage
       // const datosUsuario = localStorage.getItem("Usuario");
       // const usuario = JSON.parse(datosUsuario);
       // console.log(usuario);
 
-      alertaDiv.innerHTML = `
+     //Mostrar mensaje éxitoso 
+     alertaDiv.innerHTML = `
         <div class="alert alert-success" role="alert">
           Registro exitoso. Usuario creado correctamente.
         </div>
       `;
   
+      //Limpiar el mensaje después de 5 segundos
+      setTimeout(() => {
+        alertaDiv.innerHTML = '';
+      }, 5000);
+
       // Reiniciar el formulario
       document.getElementById('registroForm').reset();
+
     }
   });
+
+      // Evento para el inicio de sesión
+    document.getElementById('logIn').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      // Obtener los valores de los campos de inicio de sesión
+      const emailLogin = document.getElementById('email-login').value;
+      const passwordLogin = document.getElementById('password-login').value;
+      const alertaDiv = document.getElementById('alerta'); // Se usará para mostrar los mensajes
+
+      // Alerta para el inicio de sesión éxitoso
+      const alertaLoginDiv = document.getElementById('alertaLogin');  
   
+
+      // Limpiar alertas previas
+      alertaDiv.innerHTML = '';
+
+      // Recuperar los datos almacenados en localStorage (usuario registrado)
+      const usuarios = JSON.parse(localStorage.getItem('Usuarios')) || [];
+
+      // Verificar si hay usuarios registrados
+      if (usuarios.length === 0) {
+      alertaDiv.innerHTML = `
+      <div class="alert alert-danger" role="alert">
+        No hay usuarios registrados. Primero regístrate.
+      </div>
+    `;
+  } else {
+      // Buscar el usuario que coincida con el email y la contraseña
+      const usuarioEncontrado = usuarios.find(user => user.email === emailLogin && user.password === passwordLogin);
+
+      // Verificar si el usuario existe y las credenciales coinciden
+      if (usuarioEncontrado) {
+          // Si las credenciales coinciden, mostrar un mensaje de éxito
+          alertaLoginDiv.innerHTML = `
+              <div class="alert alert-success" role="alert">
+                  ¡Inicio de sesión exitoso! Bienvenido, ${usuarioEncontrado.nombre}.
+              </div>
+          `;
+      } else {
+          // Si las credenciales no coinciden
+          alertaDiv.innerHTML = `
+              <div class="alert alert-danger" role="alert">
+                  Correo electrónico o contraseña incorrectos.
+              </div>
+          `;
+      }
+  }
+});
