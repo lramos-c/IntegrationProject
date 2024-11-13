@@ -96,37 +96,26 @@ document.getElementById('registroForm').addEventListener('submit', function (eve
   });
 
       // Evento para el inicio de sesión
-    document.getElementById('logIn').addEventListener('submit', function (event) {
-      event.preventDefault();
+  document.getElementById('logIn').addEventListener('submit', function (event) {
+  event.preventDefault();
 
-      // Obtener los valores de los campos de inicio de sesión
-      const emailLogin = document.getElementById('email-login').value;
-      const passwordLogin = document.getElementById('password-login').value;
-      const alertaDiv = document.getElementById('alerta'); // Se usará para mostrar los mensajes
+  // Obtener los valores de los campos de inicio de sesión
+  const emailLogin = document.getElementById('email-login').value;
+  const passwordLogin = document.getElementById('password-login').value;
+  const alertaLoginDiv = document.getElementById('alertaLogin');  
 
-      // Alerta para el inicio de sesión éxitoso
-      const alertaLoginDiv = document.getElementById('alertaLogin');  
-  
+  // Limpiar alertas previas
+  alertaLoginDiv.innerHTML = '';
 
-      // Limpiar alertas previas
-      alertaDiv.innerHTML = '';
+  // Recuperar los datos almacenados en localStorage (usuarios registrados)
+  const usuarios = JSON.parse(localStorage.getItem('Usuarios')) || [];
 
-      // Recuperar los datos almacenados en localStorage (usuario registrado)
-      const usuarios = JSON.parse(localStorage.getItem('Usuarios')) || [];
+  // Buscar el usuario que coincida con el email
+  const usuarioEncontrado = usuarios.find(user => user.email === emailLogin);
 
-      // Verificar si hay usuarios registrados
-      if (usuarios.length === 0) {
-      alertaDiv.innerHTML = `
-      <div class="alert alert-danger" role="alert">
-        No hay usuarios registrados. Primero regístrate.
-      </div>
-    `;
-  } else {
-      // Buscar el usuario que coincida con el email y la contraseña
-      const usuarioEncontrado = usuarios.find(user => user.email === emailLogin && user.password === passwordLogin);
-
-      // Verificar si el usuario existe y las credenciales coinciden
-      if (usuarioEncontrado) {
+  if (usuarioEncontrado) {
+      // Si el correo existe, verificamos la contraseña
+      if (usuarioEncontrado.password === passwordLogin) {
           // Si las credenciales coinciden, mostrar un mensaje de éxito
           alertaLoginDiv.innerHTML = `
               <div class="alert alert-success" role="alert">
@@ -134,12 +123,19 @@ document.getElementById('registroForm').addEventListener('submit', function (eve
               </div>
           `;
       } else {
-          // Si las credenciales no coinciden
-          alertaDiv.innerHTML = `
+          // Si el correo está registrado pero la contraseña es incorrecta
+          alertaLoginDiv.innerHTML = `
               <div class="alert alert-danger" role="alert">
-                  Correo electrónico o contraseña incorrectos.
+                  Contraseña incorrecta.
               </div>
           `;
       }
+  } else {
+      // Si el correo no está registrado
+      alertaLoginDiv.innerHTML = `
+          <div class="alert alert-danger" role="alert">
+              Correo electrónico no registrado.
+          </div>
+      `;
   }
 });
