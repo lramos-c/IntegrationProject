@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script defer src="/pages/JavaScript/contacto.js"></script>
+    <script defer src="/pages/JavaScript/legal.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
@@ -50,9 +51,11 @@
         </ul>
 
         <button type="button" class="btn acc-btn">
+          <a href="/pages/HTML/newUser.html">
           <span class="material-icons">person</span>
           Iniciar Sesión
-        </button>            
+          </a>
+        </button>           
         
         
         </div>
@@ -67,16 +70,16 @@
         <!-- Box para Políticas -->
         <div class="box">
             <h2><i class="fas fa-book"></i> Políticas de la librería</h2>
-            <ul>
-                <li>&gt; Términos y condiciones</li>
-                <li>&gt; Políticas de privacidad</li>
-                <li>&gt; Políticas de devoluciones y reembolsos</li>
-                <li>&gt; Políticas de envíos</li>
-                <li>&gt; Políticas de cookies</li>
-                <li>&gt; Propiedad intelectual</li>
-                <li>&gt; Seguridad de pagos</li>
-                <li>&gt; Derechos de consumidores</li>
-                <li>&gt; Contacto de asuntos legales</li>
+            <ul class="terminos">
+                <li data-section="tyc">&gt; Términos y condiciones</li>
+                <li data-section="privacidad">&gt; Políticas de privacidad</li>
+                <li data-section="devolucion">&gt; Políticas de reembolsos y devoluciones.</li>
+                <li data-section="envios">&gt; Políticas de envíos</li>
+                <li data-section="cookies">&gt; Políticas de cookies</li>
+                <li data-section="intelectual">&gt; Propiedad intelectual</li>
+                <li data-section="pagos">&gt; Seguridad de pagos</li>
+                <li data-section="consumidores">&gt; Derechos de consumidores</li>
+                <li data-section="asuntos">&gt; Contacto de asuntos legales</li>
             </ul>
         </div>
 
@@ -84,14 +87,21 @@
         <div class="box">
             <h3><i class="fas fa-headset"></i> Contacto de ayuda</h3>
             <ul>
-                <li><i class="fas fa-clock"></i> Horario</li>
-                <li><i class="fas fa-envelope"></i> Escríbenos</li>
-                <li><i class="fas fa-phone"></i> Llámanos</li>
+                <li data-info="horario-info"><i class="fas fa-clock"></i> Horario</li>
+                <li data-info="escritos-info"><i class="fas fa-envelope"></i> Escríbenos</li>
+                <li data-info="llamanos-info"><i class="fas fa-phone"></i> Llámanos</li>
             </ul>
         </div>
+        <div>
+        <div class="message-box" id="message-box"></div>
+    </div>
+
+
     </aside>
 
-    <section class="content">
+
+        
+    <section class="content" id="content">
         <h2>Términos y condiciones</h2>
         <ol>
             <li><strong>Aceptación de los Términos</strong></li>
@@ -126,17 +136,20 @@
     </section>
 </div>
 
+     <!-- Contenedor para mostrar el mensaje dinámico -->
+     
+
     <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top" id="footer">
         <div class="col mb-3">
           <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
           </a>
          <div class="iconos-redes"> 
-          <img src="/assets/Icons/facebook.png" alt="" class="iconsFooter">
-          <img src="/assets/Icons/instagram.png" alt="" class="iconsFooter">
-          <img src="/assets/Icons/twitter.png" alt="" class="iconsFooter">
+          <a href="https://www.facebook.com/"><img src="/assets/Icons/facebook.png" alt="Icono Facebook" class="iconsFooter"></a>
+          <a href="https://www.instagram.com/"><img src="/assets/Icons/instagram.png" alt="Icono Instagram" class="iconsFooter"></a>
+          <a href="https://x.com"><img src="/assets/Icons/twitter.png" alt="Icono Twitter" class="iconsFooter"></a>
          </div>
-          <p class="fecha">© 2024</p>
+          <p class="fecha">Librería de Alejandría© 2024</p>
         </div>
       
     

@@ -90,6 +90,25 @@ body {
 .content ul {
     list-style-type: disc;
     padding-left: 20px;
+}
+
+/* Estilos para el mensaje emergente */
+.message-box {
+    display: none; /* Inicialmente oculto */
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #d6cdd6;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+}
+
+.message-box p {
+    margin: 0;
+    font-size: 16px;
+    color: black;
+}
 
 /* Responsividad: diseño adaptativo para pantallas más pequeñas */
 @media screen and (max-width: 768px) {
@@ -103,5 +122,4 @@ body {
     .container {
         flex-direction: column; /* Los elementos se apilan verticalmente */
     }
-}
 }

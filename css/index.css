@@ -1,6 +1,7 @@
 @media (max-width: 768px) {
     #header, #footer {
         width: 100vw;
+        padding : 5vw !important;
     }
 
    
@@ -151,16 +152,37 @@
 
     }
 
-    .container *:not(.excluded-class) {
-        /* Styles for all elements inside .container except those with .excluded-class */
-    }
+.search-bar-container {
+    margin-right: 10vw !important;
+}
 
     .cart-text {
         visibility: hidden;
     }
 
+    .cart-btn {
+        margin-right: 0vw !important;
+        width: 10% !important;
+    }
+
+    .nav-underline {
+        flex-direction: column;
+        gap: 0 !important;
     
-}
+    }
+    
+        .nav-underline *:not(.mobile):not(.mobile *) {
+            display: none;
+          }
+
+          .nav-underline {
+            padding: 1vw !important;
+          }
+
+
+    }
+
+
 
 @media (max-width: 1400px) {
     .container {
@@ -336,20 +358,12 @@ body {
     width: 100%;
     padding-left: 20vh;
 }
-.nav-component2::before {
-    content: "";
-    position: absolute;
-    top: 12vh; 
-    left: 40vh; 
-    right: 20vh; 
-    height: 1px; 
-    background-color: #C9B7C7; 
-}
+
 
 .carrito {
     margin-right: 3vw;
     height: 3vh;
-} 
+}
 
 .searchbar {
     width: 45vw;
@@ -427,9 +441,11 @@ input {
     color: #FFFBFF;
     position: absolute;
     gap: 0.5rem;
-    margin-left: 3vw ;
+    margin-left: 1vw ;
+    margin-right: 8vw;
 
 }
+
 
 .acc-btn {
     background: none;
@@ -449,11 +465,16 @@ input {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
     gap: 1rem;
     width: 100%;
     padding: 1rem;
     background-color: #4D3147;
+}
+
+.nav-underline {
+    width: 100%;
+    justify-content: space-evenly;
+    height: 8vh !important;
 }
 
 .nav-item-top, .nav-component1, .nav-component2 {
@@ -520,27 +541,43 @@ textarea{
 	float: center; 	
 }
 
-/* CARRITO*/
-@media (max-width: 768px) {
-    .cart-btn span:last-child { 
-        display: none; /* Ocultar la palabra 'Carrito' en móviles */
-    }
 
-    /* .cart-btn {
-        width: 100%; /* Hacer que el botón sea responsivo 
-        max-width: 500px; Opcional: limitar el ancho máximo 
-    } */
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block !important;
+    margin-top: 0; /* Optional: removes a gap between the dropdown and the parent link */
+  }
 
-    .cart-btn span:first-child {
-        font-size: 2rem; /* Aumentar el tamaño del icono si es necesario */
-    }
-.banners{
-    margin: 20px;
+  .dropdown-menu {
+    background-color: #866A80 !important; /* Change this to your desired background color */
+    border: none; /* Remove border if desired */
+  }
+
+  .dropdown-item:hover {
+    background-color: #4D3147 !important; /* Change this to your desired hover color */
+}
+
+form.dropdown-menu {
+    width: 25vw ;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #4D3147 !important;
+    border-color: #4D3147 !important;
+    color: rgb(255, 251, 255) !important;
+}
+
+/* Bootstrap variables */
+:root {
+    --bs-link-color: rgb(255, 251, 255) !important; /* Color de enlaces */
+    --bs-link-hover-color: #000000 !important; /* Color de enlaces resaltados */
+    
 }
 
 .iconsFooter{
     filter: invert(90%);
-
 }
 
+.iconsFooter:hover{
+    scale: 1.1;
 }
+
