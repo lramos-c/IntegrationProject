@@ -82,3 +82,7 @@ textarea{
 .iconsFooter{
     filter: invert(90%);
 }
+
+.contact_form {	
+	padding: 30px !important;
+}
