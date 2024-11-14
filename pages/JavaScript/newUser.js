@@ -56,6 +56,14 @@ document.getElementById('registroForm').addEventListener('submit', function (eve
       // Mostrar el objeto JSON en consola (o hacer algo con él)
       console.log("Usuario registrado:", JSON.stringify(usuario));
   
+      // Guardar los datos en LocalStorage usando JSON del usuario
+      localStorage.setItem("Usuario", JSON.stringify(usuario));
+
+      // // Recuperar los datos de LocalStorage
+      // const datosUsuario = localStorage.getItem("Usuario");
+      // const usuario = JSON.parse(datosUsuario);
+      // console.log(usuario);
+
       alertaDiv.innerHTML = `
         <div class="alert alert-success" role="alert">
           Registro exitoso. Usuario creado correctamente.
