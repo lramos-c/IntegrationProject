@@ -16,7 +16,7 @@ h1 {
 
 .main-content-container {
   display: grid;
-  grid-template-columns: 60% 400px;
+  grid-template-columns: 60% 30%;
   justify-items: center;
   margin-top: 1rem;
 }
@@ -136,4 +136,16 @@ h1 {
 .btn-checkout-container {
   display: flex;
   justify-content: center;
+}
+
+@media (max-width: 1000px) {
+  .main-content-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+
+  .card-checkout-container {
+    width: 75%;
+  }
 }
