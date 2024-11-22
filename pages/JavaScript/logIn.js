@@ -5,10 +5,10 @@ event.preventDefault();
 var email = document.getElementById("email").value;
 var password = document.getElementById("password").value;
 
-var usuario = localStorage.getItem("email");
+var email = localStorage.getItem("email");
 
 // Validación para poder iniciar sesión
-if (usuario) {
+if (email) {
     var parsedUser = JSON.parse(user);
     if (parsedUser.password === password) {
         localStorage.setItem("usuario", JSON.stringify(parsedUser));
