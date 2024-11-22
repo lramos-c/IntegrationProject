@@ -21,117 +21,98 @@
 </head>
 <body>
   <header class="p-3  text-white" id="header">
-        <div class="head-container container-fluid ">
-          <a href="/">
-            <img src="/assets/Icons/logo_round.png" alt="" id="logo">
-          </a>
-          <div class="elements d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            
-    
-            
-            <div class=" d-flex nav-component1">
-              <form class="search-bar-container">
-                <div class="dropdown">
-                <button class="burger-btn dropdown-toggle" data-bs-toggle="dropdown">
-                    <span class="material-icons">menu</span>
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Últimos vistos</a></li>
-                  <li><a class="dropdown-item" href="#">Lista de deseos</a></li>
-                  <li><a class="dropdown-item" href="#">Libros leídos</a></li>
-                  <li><a class="dropdown-item" href="#">Recomendaciones personalizadas</a></li>
+    <div class="head-container container-fluid ">
+      <a href="/">
+        <img src="/assets/Icons/logo_round.png" alt="" id="logo">
+      </a>
+      <div class="elements d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+       
+            <input type="search" class="form-control searchbar" placeholder="ISBN, Autor, Título..." aria-label="Search">
+            <button class="search-btn">
+                <span class="material-icons">search</span>
+            </button>
+        </form>
+        <button class="cart-btn">
+          <span class="material-icons">shopping_cart</span>
+          <span class = "cart-text">Carrito</span>
 
-                </ul>
-              </div>
-
-                <input type="search" class="form-control searchbar" placeholder="ISBN, Autor, Título..." aria-label="Search">
-                <button class="search-btn">
-                    <span class="material-icons">search</span>
-                </button>
-            </form>
-            <button class="cart-btn">
-              <span class="material-icons">shopping_cart</span>
-              <span class>Carrito</span>
-
-           </button>
-            </div>
-
-
-            <div class=" d-flex nav-component2">
-
-              <ul class="nav nav-underline">
-                <li class="nav-item dropdown mobile">
-                  <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Categorías
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
-                    <li><a class="dropdown-item" href="#">Artes</a></li>
-                    <li><a class="dropdown-item" href="#">Ciencia</a></li>
-                    <li><a class="dropdown-item" href="#">Ciencia Ficción</a></li>
-                    <li><a class="dropdown-item" href="#">Cocina</a></li>
-                    <li><a class="dropdown-item" href="#">Desarrollo Personal</a></li>
-                    <li><a class="dropdown-item" href="#">Economía</a></li>
-                    <li><a class="dropdown-item" href="#">Ficción</a></li>
-                    <li><a class="dropdown-item" href="#">Historia</a></li>
-                    <li><a class="dropdown-item" href="#">Literatura</a></li>
-                    <li><a class="dropdown-item" href="#">Novela Gráfica</a></li>
-                    <li><a class="dropdown-item" href="#">Poesía</a></li>
-                    <li><a class="dropdown-item" href="#">Religión</a></li>
-                    <li><a class="dropdown-item" href="#">Salud</a></li>
-                    <li><a class="dropdown-item" href="#">Sociedad</a></li>
-                    <li><a class="dropdown-item" href="#">Técnica</a></li>
-                    <li><a class="dropdown-item" href="#">Viajes</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Lo más nuevo</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Promociones</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" aria-disabled="true"></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" aria-disabled="true"></a>
-                </li>
-                <li class="nav-item mobile">
-                  <div class="dropdown">
-                  <button class="nav-link d-flex align-items-center btn btn-light " type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-                    <i class="material-icons" style="margin-right: 0.3rem;">person</i>
-                    Iniciar Sesión
-                  </button>
-                  <form class="dropdown-menu p-3 ">
-                    <div class="mb-3">
-                      <label for="exampleDropdownFormEmail2" class="form-label">Correo electronico</label>
-                      <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@ejemplo.com">
-                    </div>
-                    <div class="mb-3">
-                      <label for="exampleDropdownFormPassword2" class="form-label">Contraseña</label>
-                      <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Contraseña">
-                    </div>
-                    <div class="mb-3">
-                      <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="dropdownCheck2">
-                        <label class="form-check-label" for="dropdownCheck2">
-                          Recuerdame
-                        </label>
-                      </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Registrarse</button>
-                  </form>
-                </div>
-                </li>
-              </ul>
-
-            
-            
-            </div>
-
-          </div>
+       </button>
         </div>
+
+        <div class=" d-flex nav-component2">
+
+          <ul class="nav nav-underline">
+            <li class="nav-item dropdown mobile">
+              <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Categorías
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                <li><a class="dropdown-item" href="#">Artes</a></li>
+                <li><a class="dropdown-item" href="#">Ciencia</a></li>
+                <li><a class="dropdown-item" href="#">Ciencia Ficción</a></li>
+                <li><a class="dropdown-item" href="#">Cocina</a></li>
+                <li><a class="dropdown-item" href="#">Desarrollo Personal</a></li>
+                <li><a class="dropdown-item" href="#">Economía</a></li>
+                <li><a class="dropdown-item" href="#">Ficción</a></li>
+                <li><a class="dropdown-item" href="#">Historia</a></li>
+                <li><a class="dropdown-item" href="#">Literatura</a></li>
+                <li><a class="dropdown-item" href="#">Novela Gráfica</a></li>
+                <li><a class="dropdown-item" href="#">Poesía</a></li>
+                <li><a class="dropdown-item" href="#">Religión</a></li>
+                <li><a class="dropdown-item" href="#">Salud</a></li>
+                <li><a class="dropdown-item" href="#">Sociedad</a></li>
+                <li><a class="dropdown-item" href="#">Técnica</a></li>
+                <li><a class="dropdown-item" href="#">Viajes</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Lo más nuevo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Promociones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true"></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true"></a>
+            </li>
+            <li class="nav-item mobile">
+              <div class="dropdown">
+              <button class="nav-link d-flex align-items-center btn btn-light " type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                <i class="material-icons" style="margin-right: 0.3rem;">person</i>
+                Iniciar Sesión
+              </button>
+              <form class="dropdown-menu p-3 ">
+                <div class="mb-3">
+                  <label for="exampleDropdownFormEmail2" class="form-label">Correo electronico</label>
+                  <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@ejemplo.com">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleDropdownFormPassword2" class="form-label">Contraseña</label>
+                  <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Contraseña">
+                </div>
+                <div class="mb-3">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                    <label class="form-check-label" for="dropdownCheck2">
+                      Recuerdame
+                    </label>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary"> <a href="./newUser.html"> Registrarse</a></button>
+              </form>
+            </div>
+            </li>
+          </ul>
         
-      </header>
+        
+        </div>
+
+      </div>
+    </div>
+    
+  </header>
   
     <main class="container">
       <html lang="es">
@@ -141,12 +122,30 @@
   </head>
 <body>	
 
+
+<div class="form-aside">
+  <aside class="aside">
+    <div class="faqs">
+        <h2>FAQ's</h2>
+        <h4>¿Realizan envíos a todo México?</h4>
+        <p>Sí, realizamos envíos a cualquier parte de México utilizando paquetería terrestre.</p>
+        <h4>¿Cuánto tiempo tardará mi pedido en llegar?</h4>
+        <p>El envío se realiza en un plazo de 2 a 3 días hábiles, dependiendo de tu ubicación.</p>
+        <h4>¿Cuál es el costo del envío?</h4>
+        <p>El costo varía según el peso del pedido y la ubicación de entrega. Durante el proceso de compra, se calculará automáticamente el costo exacto.</p>
+        <h4>¿Necesito crear una cuenta para comprar?</h4>
+        <p>No, no es necesario crear una cuenta. Puedes realizar tu compra como invitado.</p>
+        <h4>¿Cómo puedo rastrear mi pedido?</h4>
+        <p>Una vez que tu pedido sea enviado, te proporcionaremos un número de guía para que puedas rastrear el estado de tu envío.</p>
+        <h4>¿Qué métodos de pago aceptan?</h4>
+        <p>Aceptamos tarjetas de crédito, débito y pagos en efectivo a través de OXXO o transferencias bancarias.</p>
+    </div>
+</aside>
+  <section class="contact">
 	<div class="contact_form">
-
 		<div class="formulario">			
-      <h1>Formulario de contacto</h1>
+      <h2>Formulario de contacto</h2>
 				<h3>Escríbenos y en breve nos pondremos en contacto contigo</h3>
-
 
 					<form id="formulario">
 								<p class="formulario-inputs">
@@ -194,8 +193,11 @@
 								</p>					
 						
 					</form>
-		</div>	
-	</div>
+		  </div>	
+    </section>
+      
+    </div>
+</div>
 
 </body>
 </html>
@@ -207,11 +209,11 @@
            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
           </a>
          <div class="iconos-redes"> 
-          <img src="/assets/Icons/facebook.png" alt="" class="iconsFooter">
-          <img src="/assets/Icons/instagram.png" alt="" class="iconsFooter">
-          <img src="/assets/Icons/twitter.png" alt="" class="iconsFooter">
+          <a href="https://www.facebook.com/"><img src="/assets/Icons/facebook.png" alt="Icono Facebook" class="iconsFooter"></a>
+          <a href="https://www.instagram.com/"><img src="/assets/Icons/instagram.png" alt="Icono Instagram" class="iconsFooter"></a>
+          <a href="https://x.com"><img src="/assets/Icons/twitter.png" alt="Icono Twitter" class="iconsFooter"></a>
          </div>
-          <p class="fecha">© 2024</p>
+          <p class="fecha">Librería de Alejandría© 2024</p>
         </div>
       
     

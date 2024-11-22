@@ -82,3 +82,17 @@ textarea{
 .iconsFooter{
     filter: invert(90%);
 }
+
+.contact_form {	
+	padding: 30px !important;
+}
+
+.form-aside{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 10px;
+}
+
+.faqs{
+	margin-top: 80px;
+}
