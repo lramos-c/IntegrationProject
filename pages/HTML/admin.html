@@ -136,7 +136,7 @@
           <h2>Agregar Libro</h2>
           <form id="book-form">
               <label>Imagen URL:</label>
-              <input type="text" id="img" required>
+              <input type="url" id="img" required>
           
               <label>ISBN:</label>
               <input type="text" id="isbn" required>
@@ -151,7 +151,7 @@
               <input type="text" id="publisher" required>
           
               <label>Descripción:</label>
-              <input type="text" id="description" maxlength="40" required>
+              <textarea type="text" id="description" maxlength="1000" required></textarea>
           
               <label>Precio:</label>
               <input type="number" id="price" step="0.01" required>
