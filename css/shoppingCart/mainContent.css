@@ -27,13 +27,17 @@ h1 {
 }
 
 .card-products-list-container  {
-  background-color: var(--clr-secondary);
   border-radius: 1rem;
   width: 90%;
   height: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 4fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
 }
 
 .card-products-list-container > p {
