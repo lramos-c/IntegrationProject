@@ -12,7 +12,7 @@ document.getElementById('registroForm').addEventListener('submit', function (eve
     const alertaDiv = document.getElementById('alerta');
 
     localStorage.setItem("Nombre", userName);
-    localStorage.setItem("Telefóno", userPhone);
+    localStorage.setItem("Teléfono", userPhone);
     localStorage.setItem("Correo",userEmail);
     localStorage.setItem("Contraseña",userPassword);
   
@@ -23,12 +23,13 @@ document.getElementById('registroForm').addEventListener('submit', function (eve
     user_list = JSON.parse(localStorage.getItem("Usuarios Registrados"))?JSON.parse(localStorage.getItem("Usuarios Registrados")):[]
     // Validación para checar que solo sea un correo por usuario
     if(user_list.some((v)=>{
-      return v.userEmail==userEmail
+      return v.userEmail===email
     })){
       alert("El correo ya está registrado");
     }else {
       user_list.push({
         "Nombre": userName,
+        "Teléfono": userPhone,
         "Correo": userEmail,
         "Contraseña": userPassword
       })
@@ -105,8 +106,8 @@ document.getElementById('registroForm').addEventListener('submit', function (eve
         </div>
       `;
   
-    // //   // Reiniciar el formulario
-    // //   document.getElementById('registroForm').reset();
-    // }
-  });
+      // Reiniciar el formulario
+      document.getElementById('registroForm').reset();
+    }
+  );
   

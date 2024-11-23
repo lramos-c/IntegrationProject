@@ -2,21 +2,17 @@
 document.getElementById("loginForm").addEventListener("submit", function(event){
 event.preventDefault();
 // Recupera los siguientes datos de localStorage
-var email = document.getElementById("email").value;
-var password = document.getElementById("password").value;
+const userEmail = document.getElementById("email").value;
+const userPassword = document.getElementById("password").value;
 
-var email = localStorage.getItem("email");
+let user_list = new Array();
+user_list = JSON.parse(localStorage.getItem("Usuarios Registrados"))?JSON.parse(localStorage.getItem("Usuarios Registrados")):[]
+// Validación para checar que solo sea un correo por usuario
+if(user_list.some((v)=>{
+  return v.userEmail==email && v.userPassword==password
+})){
+  alert("Acceso correcto");
+}else {
+  alert("Correo y/o contraseña incorrectos")
+  }})
 
-// Validación para poder iniciar sesión
-if (email) {
-    var parsedUser = JSON.parse(user);
-    if (parsedUser.password === password) {
-        localStorage.setItem("usuario", JSON.stringify(parsedUser));
-        window.location.href = "/pages/index.html";
-    } else {
-        alert("Contraseña equivocada");
-    } 
-    } else {
-        alert("Usuario no encontrado");
-    }
-});
