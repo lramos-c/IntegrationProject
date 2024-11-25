@@ -71,35 +71,3 @@ const mensajeMax = 250;
         }
     })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// document.getElementById("formulario").addEventListener("submit", function(event) {
-//     event.preventDefault()
-
-
-//     //se crea un objeto 
-//      const data = {
-//          nombre:  document.getElementById("nombre").value,
-//          email: document.getElementById("email").value,
-//          telefono: document.getElementById("telefono").value,
-//          asunto: document.getElementById("asunto").value,
-//          mensaje: document.getElementById("mensaje").value,
-//      }
-
-//     //de objeto a JSON
-//      const dataJson= JSON.stringify(data);
-//      console.log(dataJson);
-
-// });
