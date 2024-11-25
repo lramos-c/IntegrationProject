@@ -2,13 +2,19 @@ function showSection(sectionId) {
 
     // Ocultar todas las secciones
 
-    const sections = document.getElementsByClassName('section');
+    const sections = document.querySelectorAll('.section');
 
-    for (let section of sections) {
-        section.classList.remove('active');
-    }
+    sections.forEach(section => {
+
+        section.style.display = 'none';
+
+    });
+
 
     // Mostrar la sección seleccionada
 
-    document.getElementById(sectionId).classList.add('active');
+    const selectedSection = document.getElementById(sectionId);
+
+    selectedSection.style.display = 'grid';
+
 }

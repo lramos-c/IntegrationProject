@@ -81,28 +81,23 @@ main {
 
 .section {
     display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
 }
 
 
-.section.active {
-    display: block;
-    opacity: 1;
-}
+
 
 /* Estilos para las cards */
 
-#infoPersonal {
+#infoPersonal, #formaDePago, #pedidos, #membresia, #soporte {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
-    
 }
 
 
-#infoPersonal .card {
+
+.card {
     height: 30vh;
     display: flex;
     flex-direction: column;
@@ -111,7 +106,7 @@ main {
 }
 
 
-#infoPersonal .card-body {
+.card-body {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -119,7 +114,7 @@ main {
 }
 
 .card-text{
-    box-sizing: content-box;
+    box-sizing : border-box;
     word-wrap: break-all;
 }
 
