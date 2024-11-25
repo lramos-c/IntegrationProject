@@ -1,16 +1,15 @@
 // Cargar libros desde localStorage o establecer el array inicial
 let books = JSON.parse(localStorage.getItem('books')) || [
-    { img: 'https://m.media-amazon.com/images/I/713nEf55PkL._AC_UF1000,1000_QL80_.jpg', isbn: '123456', title: 'Book 1', author: 'Autor 1', publisher: 'Publisher 1', description: 'Sample book 1', price: 599.99 },
-    { img: 'https://www.planetadelibros.com/usuaris/libros/fotos/377/original/portada_el-codigo-da-vinci_dan-brown_202310231128.jpg', isbn: '234567', title: 'Book 2', author: 'Autor 2', publisher: 'Publisher 2', description: 'Sample book 2', price: 289.00 },
-    { img: 'https://m.media-amazon.com/images/I/81ZqSrqKT4L._AC_UF1000,1000_QL80_.jpg', isbn: '234567', title: 'Book 3', author: 'Autor 3', publisher: 'Publisher 3', description: 'Sample book 3', price: 250.00 },
-    { img: 'https://m.media-amazon.com/images/I/91Op0BdHd0L._SL1500_.jpg', isbn: '234567', title: 'Book 3', author: 'Autor 3', publisher: 'Publisher 3', description: 'Sample book 3', price: 250.00 },
-    { img: 'https://i.pinimg.com/564x/dc/0e/c0/dc0ec0d08743f30a44a384689058f2ad.jpg', isbn: '234567', title: 'Book 3', author: 'Autor 3', publisher: 'Publisher 3', description: 'Sample book 3', price: 250.00 },
-    { img: 'https://i.pinimg.com/736x/24/6a/a1/246aa11067186cdf68e93db476cf3d93.jpg', isbn: '234567', title: 'Book 3', author: 'Autor 3', publisher: 'Publisher 3', description: 'Sample book 3', price: 250.00 },
-    { img: 'https://i.pinimg.com/564x/04/67/7b/04677b90c0f9f26193224099beccade2.jpg', isbn: '234567', title: 'Book 3', author: 'Autor 3', publisher: 'Publisher 3', description: 'Sample book 3', price: 250.00 },
-    { img: 'https://i.pinimg.com/564x/98/59/f0/9859f0cb410e11204c166e7da797bd0a.jpg', isbn: '234567', title: 'Book 3', author: 'Autor 3', publisher: 'Publisher 3', description: 'Sample book 3', price: 250.00 },
-    { img: 'https://m.media-amazon.com/images/I/81ZqSrqKT4L._AC_UF1000,1000_QL80_.jpg', isbn: '234567', title: 'Book 3', author: 'Autor 3', publisher: 'Publisher 3', description: 'Sample book 3', price: 250.00 },
-    { img: 'https://m.media-amazon.com/images/I/81ZqSrqKT4L._AC_UF1000,1000_QL80_.jpg', isbn: '234567', title: 'Book 3', author: 'Autor 3', publisher: 'Publisher 3', description: 'Sample book 3', price: 250.00 },
-    
+    { img: 'https://m.media-amazon.com/images/I/81Z-yHX8OcL._AC_UF1000,1000_QL80_.jpg', isbn: '9781250773021', title: 'A Court of Thorns and Roses', author: 'Sarah J. Maas', publisher: 'Bloomsbury Publishing', description: 'A fantasy novel about a young huntress who gets drawn into the magical and dangerous world of the Fae.', price: 429.00,rating:4 },
+    { img: 'https://m.media-amazon.com/images/I/712zD1rKTUL._UF1000,1000_QL80_.jpg', isbn: '9780593189657', title: 'It Ends With Us', author: 'Colleen Hoover', publisher: 'Atria Books', description: 'A heart-wrenching love story that explores domestic abuse and the complexities of relationships.', price: 349.99,rating:3 },
+    { img: 'https://m.media-amazon.com/images/I/91868k2+gUL._AC_UF1000,1000_QL80_.jpg', isbn: '9781250276751', title: 'Verity', author: 'Colleen Hoover', publisher: 'Montlake', description: 'A psychological thriller about a struggling writer who uncovers chilling secrets while ghostwriting an unfinished novel.', price: 399.99,rating:5 },
+    { img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2wi6_2fi2vu2Q5sD0mrUvP327oOUaJ4ggrw&s', isbn: '9780399590504', title: 'Before We Were Strangers', author: 'Renée Carlino', publisher: 'Atria Books', description: 'A heartfelt romance about two college friends who reconnect after 15 years.', price: 299.99,rating:2 },
+    { img: 'https://m.media-amazon.com/images/I/81ioPZFMeUL._UF894,1000_QL80_.jpg', isbn: '9780062457714', title: 'The Alchemist', author: 'Paulo Coelho', publisher: 'HarperOne', description: 'An inspiring tale of self-discovery about a shepherd who journeys in search of treasure.', price: 279.99 ,rating:4},
+    { img: 'https://m.media-amazon.com/images/I/81Qg0DLNGTL.jpg', isbn: '9781501128035', title: 'The Light We Lost', author: 'Jill Santopolo', publisher: 'G.P. Putnam\'s Sons', description: 'A romantic drama exploring love, fate, and the choices that shape our lives.', price: 319.00 ,rating:3},
+    { img: 'https://m.media-amazon.com/images/I/81msb6gUBTL._AC_UF1000,1000_QL80_.jpg', isbn: '9780316408181', title: 'The Song of Achilles', author: 'Madeline Miller', publisher: 'Ecco', description: 'A retelling of the Iliad, focused on the epic romance between Achilles and Patroclus.', price: 399.99 ,rating:1},
+    { img: 'https://m.media-amazon.com/images/I/81Z+3n31w7L._UF894,1000_QL80_.jpg', isbn: '9781250313189', title: 'Daisy Jones & The Six', author: 'Taylor Jenkins Reid', publisher: 'Ballantine Books', description: 'A fictional oral history of a 1970s rock band and their rise to fame.', price: 379.00 ,rating:2},
+    { img: 'https://m.media-amazon.com/images/I/71kdiN5Y1YL.jpg', isbn: '9781982131736', title: 'Beach Read', author: 'Emily Henry', publisher: 'Berkley', description: 'A romantic comedy about two writers who make a bet to finish their novels while navigating their feelings for each other.', price: 329.99 ,rating:4},
+    { img: 'https://m.media-amazon.com/images/I/71QKQ9mwV7L.jpg', isbn: '9781524763169', title: 'The Subtle Art of Not Giving a F*ck', author: 'Mark Manson', publisher: 'HarperOne', description: 'A no-nonsense guide to living a meaningful life by embracing limits and facing truths.', price: 459.00,rating:5 }
 ];
 
 // Función para guardar libros en localStorage
@@ -42,6 +41,7 @@ function renderBooks() {
 // Función para agregar un libro
 function addBook(event) {
     event.preventDefault();
+    const rating = Math.floor(Math.random() * 5) + 1;
     const newBook = {
         img: document.getElementById('img').value,
         isbn: document.getElementById('isbn').value,
@@ -50,6 +50,7 @@ function addBook(event) {
         publisher: document.getElementById('publisher').value,
         description: document.getElementById('description').value,
         price: parseFloat(document.getElementById('price').value),
+        rating: rating,
     };
     books.push(newBook);
     saveBooks(); // Guardar en localStorage
@@ -122,5 +123,3 @@ function renderBooks() {
 
 // Render inicial
 renderBooks();
-
-

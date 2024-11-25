@@ -1,62 +1,81 @@
-// Obtener el carrito del localStorage o inicializarlo vacío
+// Obtener carrito del localStorage o inicializarlo vacío
 function getCart() {
     return JSON.parse(localStorage.getItem('cart')) || [];
 }
 
-// Guardar el carrito en localStorage
+// Guardar carrito en localStorage
 function saveCart(cart) {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
-
-// Renderizar el contenido del carrito
 function renderCart() {
     const cartItemsContainer = document.getElementById('cart-items');
     const cartCount = document.getElementById('cart-count');
-    const cart = getCart();
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+    // Clear the cart UI before re-rendering
     cartItemsContainer.innerHTML = '';
-    cart.forEach((item, index) => {
+
+    // Loop through the cart items and render them
+    cart.forEach((item) => {
         const listItem = document.createElement('li');
         listItem.innerHTML = `
             <div>
                 <img src="${item.img}" alt="${item.title}">
-                <strong>${item.title}</strong> - $${item.price.toFixed(2)}
+                <strong>${item.title}</strong> - $${item.price.toFixed(2)} (x${item.quantity})
             </div>
-            <button class="remove-item-btn" data-index="${index}">&times;</button>
+            <button class="remove-item-btn" data-isbn="${item.isbn}">&times;</button>
         `;
         cartItemsContainer.appendChild(listItem);
     });
 
-    cartCount.textContent = cart.length;
+    // Update the cart count display
+    cartCount.textContent = cart.reduce((total, item) => total + (item.quantity || 1), 0);
 
-    // Botones para eliminar elementos del carrito
+    // Add event listeners for the remove buttons
     document.querySelectorAll('.remove-item-btn').forEach((button) =>
-        button.addEventListener('click', (event) => removeFromCart(event.target.dataset.index))
+        button.addEventListener('click', (event) => removeFromCart(event.target.dataset.isbn))
     );
 }
 
-// Añadir producto al carrito
+function removeFromCart(isbn) {
+    const cart = getCart();
+    const updatedCart = cart.filter((item) => item.isbn !== isbn);
+    saveCart(updatedCart);
+
+    // Re-render both carts
+    renderCart();
+    renderShoppingCart();
+}
+
 function addToCart(isbn) {
-    const books = getBooks();
-    const book = books.find((b) => b.isbn === isbn);
+    const books = getBooks();  // Retrieve the books data
+    const book = books.find((b) => b.isbn === isbn);  // Find the book by ISBN
+    
     if (book) {
-        const cart = getCart();
-        cart.push(book);
-        saveCart(cart);
-        renderCart();
-        alert(`${book.title} ha sido añadido al carrito.`);
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Check if the book is already in the cart by ISBN
+        const existingItem = cart.find((item) => item.isbn === isbn);
+        
+        if (existingItem) {
+            // If the book is already in the cart, increase the quantity
+            existingItem.quantity += 1;
+        } else {
+            // If the book is not in the cart, add it with quantity 1
+            book.quantity = 1;
+            cart.push(book);
+        }
+
+        // Save the updated cart to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+
+        // Update the cart UI dynamically without reloading the page
+        renderCart();  // Call renderCart to update the cart UI
     }
 }
 
-// Eliminar producto del carrito
-function removeFromCart(index) {
-    const cart = getCart();
-    cart.splice(index, 1);
-    saveCart(cart);
-    renderCart();
-}
-
-// Mostrar/Ocultar la lista desplegable del carrito
+// Mostrar/Ocultar lista desplegable del carrito
 document.querySelector('.cart-btn').addEventListener('click', () => {
     const dropdown = document.getElementById('cart-dropdown');
     dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';

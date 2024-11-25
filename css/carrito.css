@@ -24,12 +24,12 @@
 
 .cart-dropdown {
     position: absolute;
-    right: 0;
     top: 100%;
+    right: 0;
     background-color:#f6f6f6;
     box-shadow: 0 4px 8px rgba(221, 185, 224, 0.1);
     border-radius: 15%;
-    width: 500px;
+    width: 40vw;
     display: none;
     z-index: 10;
     color: #270c26;
@@ -78,4 +78,21 @@
 .remove-item-btn{
     background-color: #2f1b30;
     color: #e5d8e9;
+    height: 30%;
+    width: 5%;
+}
+
+.input-discount-code{
+    border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+    .cart-dropdown {
+        width: 100vw !important;
+        position: absolute !important;
+        right: unset !important;
+        left: unset !important;
+        transform: translateX(-290px) !important;
+    }
+
 }
