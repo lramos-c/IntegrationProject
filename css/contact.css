@@ -96,3 +96,25 @@ textarea{
 .faqs{
 	margin-top: 80px;
 }
+
+@media (max-width: 600px){
+    .faqs p{
+        opacity: 0;
+        height: 0; /* Opcional si prefieres un efecto de deslizamiento */
+        overflow: hidden;
+        transition: opacity 0.5s ease, height 0.5s ease;
+    }
+    p.visible {
+        opacity: 1;
+        height: auto; /* O un valor fijo si prefieres que tenga una altura específica */
+    }
+    .faqs{
+        text-align: center;   
+    }
+    .aside{
+        height: auto;
+    }
+    .form-aside{
+        display: block;
+    }
+}
