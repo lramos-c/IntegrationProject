@@ -7,6 +7,10 @@
     <title>Librería de Alejandría</title>
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/contact.css">
+    <!-- Funcionalidad de carrito en la navbar -->
+    <link rel="stylesheet" href="/css/carrito.css">
+    <script defer src="/pages/JavaScript/carrito.js"></script>
+    <!-- Funcionalidad de carrito en la navbar (fin) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,25 +24,49 @@
 
 </head>
 <body>
-  <header class="p-3  text-white" id="header">
+   <!-- Inicio del header -->
+   <header class="p-3  text-white" id="header">
     <div class="head-container container-fluid ">
       <a href="/">
         <img src="/assets/Icons/logo_round.png" alt="" id="logo">
       </a>
       <div class="elements d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-       
+        
+
+        
+        <div class=" d-flex nav-component1">
+          <form class="search-bar-container">
+            <div class="dropdown">
+            <button class="burger-btn dropdown-toggle" data-bs-toggle="dropdown">
+                <span class="material-icons">menu</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Últimos vistos</a></li>
+              <li><a class="dropdown-item" href="#">Lista de deseos</a></li>
+              <li><a class="dropdown-item" href="#">Libros leídos</a></li>
+              <li><a class="dropdown-item" href="#">Recomendaciones personalizadas</a></li>
+
+            </ul>
+          </div>
+
             <input type="search" class="form-control searchbar" placeholder="ISBN, Autor, Título..." aria-label="Search">
             <button class="search-btn">
                 <span class="material-icons">search</span>
             </button>
         </form>
-        <button class="cart-btn">
-          <span class="material-icons">shopping_cart</span>
-          <span class = "cart-text">Carrito</span>
 
-       </button>
-        </div>
-
+        <div class="cart-container-shopping">
+          <button class="cart-btn">
+              <span class="material-icons">shopping_cart</span>
+              <span id="cart-count">0</span>
+          </button>
+          <div id="cart-dropdown" class="cart-dropdown">
+              <h3>Carrito</h3>
+              <ul id="cart-items" class="cart-items"></ul>
+              <button id="checkout-btn" onclick="location.href='/pages/HTML/shoppingCart.html'">Ir al carrito</button>
+          </div>
+      </div>          
+    </div>
         <div class=" d-flex nav-component2">
 
           <ul class="nav nav-underline">
@@ -66,15 +94,15 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Lo más nuevo</a>
+              <a class="nav-link" href="./pages/HTML/news.html">Lo más nuevo</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Promociones</a>
+              <a class="nav-link" href="./pages/HTML/promotion.html">Promociones</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item disabled">
               <a class="nav-link disabled" aria-disabled="true"></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item disabled">
               <a class="nav-link disabled" aria-disabled="true"></a>
             </li>
             <li class="nav-item mobile">
@@ -100,7 +128,7 @@
                     </label>
                   </div>
                 </div>
-                <button type="submit" class="btn btn-primary"> <a href="./newUser.html"> Registrarse</a></button>
+                <button type="submit" class="btn btn-primary"> <a href="./pages/HTML/signUp.html"> Registrarse</a></button>
               </form>
             </div>
             </li>
@@ -113,8 +141,9 @@
     </div>
     
   </header>
+<!-- Fin del header -->
   
-    <main class="container">
+    <main class="container" id="contact">
       <html lang="es">
 <head>
 	<meta charset="UTF-8">
@@ -126,21 +155,21 @@
 <div class="form-aside">
   <aside class="aside">
     <div class="faqs">
-        <h2>FAQ's</h2>
-        <h4>¿Realizan envíos a todo México?</h4>
-        <p>Sí, realizamos envíos a cualquier parte de México utilizando paquetería terrestre.</p>
-        <h4>¿Cuánto tiempo tardará mi pedido en llegar?</h4>
-        <p>El envío se realiza en un plazo de 2 a 3 días hábiles, dependiendo de tu ubicación.</p>
-        <h4>¿Cuál es el costo del envío?</h4>
-        <p>El costo varía según el peso del pedido y la ubicación de entrega. Durante el proceso de compra, se calculará automáticamente el costo exacto.</p>
-        <h4>¿Necesito crear una cuenta para comprar?</h4>
-        <p>No, no es necesario crear una cuenta. Puedes realizar tu compra como invitado.</p>
-        <h4>¿Cómo puedo rastrear mi pedido?</h4>
-        <p>Una vez que tu pedido sea enviado, te proporcionaremos un número de guía para que puedas rastrear el estado de tu envío.</p>
-        <h4>¿Qué métodos de pago aceptan?</h4>
-        <p>Aceptamos tarjetas de crédito, débito y pagos en efectivo a través de OXXO o transferencias bancarias.</p>
+      <h2>FAQ's</h2>
+      <h4 id="quest1">¿Realizan envíos a todo México?</h4>
+      <p id="text1">Sí, realizamos envíos a cualquier parte de México utilizando paquetería terrestre.</p>
+      <h4 id="quest2">¿Cuánto tiempo tardará mi pedido en llegar?</h4>
+      <p id="text2">El envío se realiza en un plazo de 2 a 3 días hábiles, dependiendo de tu ubicación.</p>
+      <h4 id="quest3">¿Cuál es el costo del envío?</h4>
+      <p id="text3">El costo varía según el peso del pedido y la ubicación de entrega. Durante el proceso de compra, se calculará automáticamente el costo exacto.</p>
+      <h4 id="quest4">¿Necesito crear una cuenta para comprar?</h4>
+      <p id="text4">No, no es necesario crear una cuenta. Puedes realizar tu compra como invitado.</p>
+      <h4 id="quest5">¿Cómo puedo rastrear mi pedido?</h4>
+      <p id="text5">Una vez que tu pedido sea enviado, te proporcionaremos un número de guía para que puedas rastrear el estado de tu envío.</p>
+      <h4 id="quest6">¿Qué métodos de pago aceptan?</h4>
+      <p id="text6">Aceptamos tarjetas de crédito, débito y pagos en efectivo a través de OXXO o transferencias bancarias.</p>
     </div>
-</aside>
+  </aside>
   <section class="contact">
 	<div class="contact_form">
 		<div class="formulario">			
