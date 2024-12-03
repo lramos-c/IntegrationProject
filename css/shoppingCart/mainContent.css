@@ -2,6 +2,7 @@
   --clr-primary: #4D3147;
   --clr-secondary: #866A80;
   --clr-accent: #FFFFFF;
+  --clr-ex: #C9B7C7;
 }
 
 main {
@@ -16,7 +17,7 @@ h1 {
 
 .main-content-container {
   display: grid;
-  grid-template-columns: 60% 30%;
+  grid-template-columns: 60% 38%;
   justify-items: center;
   margin-top: 1rem;
 }
@@ -26,19 +27,20 @@ h1 {
   width: 300px;
 }
 
-.card-products-list-container  {
+.card-products-list-container {
   border-radius: 1rem;
-  width: 90%;
-  height: 80%;
+  width: 90%; /* Adjust width as needed */
+  max-height: 80vh; /* Adjust max-height if necessary */
+  overflow-y: auto; /* Enable vertical scrolling */
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 4fr));
-  gap: 20px;
-  list-style: none;
+  flex-direction: column; /* Align items vertically */
   padding: 0;
+  gap: 20px; /* Space between items */
+  list-style: none;
+  background-color: #866A80;
+  padding: 1vw;
 }
+
 
 .card-products-list-container > p {
   font-weight: 900;
@@ -64,7 +66,7 @@ h1 {
   padding-block: 3rem;
   border-radius: 1rem;
   min-height: 250px;
-  background-color: var(--clr-accent);
+  background-color: var(--clr-ex);
 }
 
 .chekout-info-container > div {
@@ -150,6 +152,16 @@ h1 {
   }
 
   .card-checkout-container {
-    width: 75%;
+    width: 95%;
   }
+
+  .card-products-list-container{
+    height: 400px;
+  }
+
+  cart-product {
+    max-height: 20vw !important;
+  }
+  
+
 }

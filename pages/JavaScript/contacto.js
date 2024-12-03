@@ -71,18 +71,21 @@ const mensajeMax = 250;
         }
     })
 
-
-
-
-
-
-
-
-
-
-
-
-
+// Chunk para desplegar Faqs cuando la pantalla tiene un ancho <= a 600px
+const totalFaqs = 6; //Numero de faqs 
+// Este bucle crea una funcion para cada faqs del texto principal y si la pantalla es <= a 600px de ancho se habilitan las funciones que cambian la visibilidad del texto
+    for (let i=1; i<=totalFaqs; i++){
+        document.getElementById(`quest${i}`).addEventListener("click", () => {
+            if(window.innerWidth<=600){
+                const text1 = document.getElementById(`text${i}`);
+                if (text1.classList.contains("visible")) {
+                    text1.classList.remove("visible");
+                } else {
+                    text1.classList.add("visible");
+                }
+            } 
+        })
+    }
 
 
 // document.getElementById("formulario").addEventListener("submit", function(event) {

@@ -1,3 +1,12 @@
+@media (max-width: 768px) {
+.container-admin {
+    flex-direction: column;
+    margin: 0 !important;
+}
+}
+
+
+
 .title-admin{
     text-align: center;
     margin-top: 20px;
