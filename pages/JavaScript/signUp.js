@@ -1,5 +1,6 @@
 import agregarUsuarioBD from "./agregarUsuarioBD.js";
 
+
 document.getElementById('registroForm').addEventListener('submit', async function (event) {
   event.preventDefault();
 
@@ -62,6 +63,7 @@ document.getElementById('registroForm').addEventListener('submit', async functio
     });
 
     if (registroExitoso) {
+
       alertaDiv.innerHTML = `
         <div class="alert alert-success" role="alert">
           Registro exitoso. Usuario creado correctamente.
@@ -76,6 +78,7 @@ document.getElementById('registroForm').addEventListener('submit', async functio
         </div>
       `;
     }
+
   } catch (error) {
     console.error("Error al conectar con la API:", error);
     alertaDiv.innerHTML = `
@@ -85,3 +88,4 @@ document.getElementById('registroForm').addEventListener('submit', async functio
     `;
   }
 });
+
