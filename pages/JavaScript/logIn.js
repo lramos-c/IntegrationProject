@@ -1,23 +1,25 @@
 import verificarLogin from "./verificarLogin.js";
 
-// Script para iniciar sesión
-document.getElementById("loginForm").addEventListener("submit", function(event){
-event.preventDefault();
-  verificarLogin();
-// Recupera los siguientes datos de localStorage
-// const userEmail = document.getElementById("email").value;
-// const userPassword = document.getElementById("password").value;
+// Agrega un listener al formulario de login para manejar el evento "submit".
+document.getElementById("loginForm").addEventListener("submit", async function (event) {
+  // Evita que el formulario recargue la página al enviarse.
+  event.preventDefault();
 
-// let user_list = new Array();
-// user_list = JSON.parse(localStorage.getItem("Usuarios Registrados"))?JSON.parse(localStorage.getItem("Usuarios Registrados")):[]
-// // Validación para checar que solo sea un correo por usuario
-// if(user_list.some((v)=>{
-//   return v.userEmail==email && v.userPassword==password
-// })){
-//   alert("Acceso correcto");
-//   verificarLogin();
-// }else {
-//   alert("Correo y/o contraseña incorrectos")
-//   }
-})
+  // Obtiene los valores ingresados por el usuario en los campos de correo y contraseña.
+  const userEmail = document.getElementById("email").value; // Correo ingresado.
+  const userPassword = document.getElementById("password").value; // Contraseña ingresada.
+
+  // Llama a la función `verificarLogin` para validar las credenciales.
+  // Retorna `true` si las credenciales son correctas, o `false` si son incorrectas.
+  const loginSuccess = await verificarLogin(userEmail, userPassword);
+
+  if (loginSuccess) {
+    // Si el login es exitoso, muestra un mensaje y redirige al usuario al dashboard.
+    alert("Acceso correcto");
+    window.location.href = "/"; 
+  } else {
+    // Si las credenciales no coinciden, muestra un mensaje de error.
+    alert("Correo y/o contraseña incorrectos");
+  }
+});
 

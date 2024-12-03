@@ -1,10 +1,16 @@
+// verificarLogin.js
+export default async function verificarLogin(email, password) {
+  // Recupera los usuarios almacenados en localStorage (si los hay)
+  const userList = JSON.parse(localStorage.getItem("Usuarios Registrados")) || [];
 
-export default async function verificarLogin() {
-  const URL = "https://fakestoreapi.com/products?limit=2";
-  let credencialesUsuario = null;
+  // Busca el usuario con el correo proporcionado
+  const user = userList.find((u) => u.Correo === email);
 
-  await fetch(URL)
-  .then(response => response.json())
-  .then(data => credencialesUsuario = data)
-  .catch(error => console.log(error));
+  if (user && user.Contraseña === password) {
+    // Si el usuario existe y la contraseña coincide, retorna true
+    return true;
+  } else {
+    // Si no existe o las contraseñas no coinciden, retorna false
+    return false;
+  }
 }
