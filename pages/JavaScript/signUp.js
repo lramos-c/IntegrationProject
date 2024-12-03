@@ -1,3 +1,6 @@
+
+import agregarUsuarioBD from "./agregarUsuarioBD.js";
+
 document.getElementById('registroForm').addEventListener('submit', function (event) {
     event.preventDefault();
   
@@ -105,7 +108,7 @@ document.getElementById('registroForm').addEventListener('submit', function (eve
           Registro exitoso. Usuario creado correctamente.
         </div>
       `;
-  
+      agregarUsuarioBD();
       // Reiniciar el formulario
       document.getElementById('registroForm').reset();
     }
