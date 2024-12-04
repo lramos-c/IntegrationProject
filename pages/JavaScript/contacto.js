@@ -88,21 +88,32 @@ const totalFaqs = 6; //Numero de faqs
     }
 
 
-// document.getElementById("formulario").addEventListener("submit", function(event) {
-//     event.preventDefault()
+document.getElementById("formulario").addEventListener("submit", function(event) {
+    event.preventDefault()
+     //se crea un objeto 
+    const data = {
+        asunto: document.getElementById("asunto").value,
+        mensaje: document.getElementById("mensaje").value,
+        telefono: document.getElementById("telefono").value,
+        nombre:  document.getElementById("nombre").value,
+        email: document.getElementById("email").value,
+    }
 
-
-//     //se crea un objeto 
-//      const data = {
-//          nombre:  document.getElementById("nombre").value,
-//          email: document.getElementById("email").value,
-//          telefono: document.getElementById("telefono").value,
-//          asunto: document.getElementById("asunto").value,
-//          mensaje: document.getElementById("mensaje").value,
-//      }
-
-//     //de objeto a JSON
-//      const dataJson= JSON.stringify(data);
-//      console.log(dataJson);
-
-// });
+    const url =`http://localhost:8080/api/v1/contact/create`
+    fetch(url,{
+        method: 'POST',
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(data =>{
+        console.log("Guardado", data)
+    })
+    .catch(error => {
+        console.log(error)
+    })
+     //de objeto a JSON
+    //const dataJson= JSON.stringify(data);
+    //console.log(dataJson);
+});
