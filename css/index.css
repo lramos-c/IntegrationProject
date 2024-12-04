@@ -29,15 +29,22 @@
         margin-left: 0 !important;
     }
 
+    header * button {
+        margin-bottom: 0px !important;
+    }
     .nav {
         flex-direction: column;
         align-items: center;
     }
     .head-container {
         width: 100% !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
+        padding: 0 !important;
     }
 
     .nav-component1, .nav-component2 {
+        position: relative !important;
         flex-direction: row;
         justify-content: center;
         width: 100%;
@@ -69,7 +76,8 @@
     }
     .elements
     {
-        width: 80% !important;
+        width: 100% !important;
+        gap: 1rem !important;
     }
 
     .col {
@@ -101,44 +109,64 @@
 
     }
 
-.search-bar-container {
-    margin-right: 10vw !important;
-}
-
-    .cart-text {
-        visibility: hidden;
+    .search-bar-container {
+        margin-right: 0vw !important;
+        width: 100% !important;
     }
 
+
     .cart-btn {
-        margin-right: 0vw !important;
+        margin-right: 5vw !important;
         width: 10% !important;
     }
 
     .nav-underline {
         flex-direction: column;
         gap: 0 !important;
+        padding: 1vw !important;
     
     }
     
-        .nav-underline *:not(.mobile):not(.mobile *) {
-            display: none;
-          }
+    .nav-underline *:not(.mobile):not(.mobile *) {
+        display: none;
+    }
 
-          .nav-underline {
-            padding: 1vw !important;
-          }
+    a #logo {
+        height: 8vh !important;
+    }
 
+    header * .dropdown-menu {
+        width: 100vw !important;
 
     }
+
+    .dropdown-menu button  {
+        margin-bottom: 1vw !important;
+    }
+}
 
 
 
 @media (max-width: 1400px) {
-    .container {
-        max-width: 95vw !important;
-    }
+
     .nav {
         max-width: 95vw;
+    }
+
+
+    .disabled {
+        display: none;
+    }
+
+    form.dropdown-menu {
+        position: absolute;
+        width: 60vw ;
+        right: 0vw;
+    }
+    .cart-dropdown {
+        transform: translateX(-70px) !important;
+        width: 50vw !important;
+        
     }
 
 }
@@ -422,7 +450,6 @@ input {
 .nav-underline {
     width: 100%;
     justify-content: space-evenly;
-    height: 8vh !important;
 }
 
 .nav-item-top, .nav-component1, .nav-component2 {
@@ -504,6 +531,10 @@ textarea{
     background-color: #4D3147 !important; /* Change this to your desired hover color */
 }
 
+.cart-btn:hover {
+    background-color: #e5d8e9;
+}
+
 form.dropdown-menu {
     width: 25vw ;
 }
@@ -533,7 +564,7 @@ form.dropdown-menu {
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
 }
@@ -548,7 +579,9 @@ form.dropdown-menu {
 }
 
 .product-img {
-    width: 100%;
+    max-width: 220px;
+    max-height: 300px;
+    width: 90%;
     height: auto;
     border-radius: 8px;
 }
@@ -573,7 +606,8 @@ form.dropdown-menu {
 }
 
 .add-to-cart-btn {
-    background-color: #ac64eb;
+    margin-top: 3px;
+    background-color: #4D3147;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -583,4 +617,110 @@ form.dropdown-menu {
 
 .add-to-cart-btn:hover {
     background-color: #1a012a;
+}
+
+ul li  {
+    min-width: 100px;
+}
+/* Modal Background */
+#product-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position to stay in place while scrolling */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full screen width */
+    height: 100%; /* Full screen height */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    z-index: 9999; /* Ensure the modal is on top */
+    overflow: hidden; /* Prevent overflow of modal content */
+    
+}
+
+
+/* Modal Content */
+.modal-content {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust the modal to be perfectly centered */
+    background-color: #C9B7C7 !important; /* White background for the modal */
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%; /* Set width of modal to 80% of the viewport */
+    max-width: 600px; /* Maximum width to prevent it from being too wide */
+    box-sizing: border-box;
+    height: 95%; /* Allow the modal to grow in height if needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Product Image */
+#modal-product-img {
+    max-width: 200px;
+    max-height: 300px;
+    margin-bottom: 20px;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Product Details */
+.product-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Product Title, Author, Price, and Description */
+.product-details h2,
+.product-details p {
+    margin: 10px 0;
+    color: #333;
+}
+
+/* Star Rating */
+#modal-product-rating {
+    margin: 10px 0;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.star {
+    font-size: 24px;
+    color: #d3d3d3;  /* Gray for unfilled stars */
+    margin-right: 5px;
+}
+
+.star.filled {
+    color: gold;  /* Gold for filled stars */
+}
+
+/* Add to Cart Button */
+.product-details button {
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.product-details button:hover {
+    background-color: #0056b3;
 }

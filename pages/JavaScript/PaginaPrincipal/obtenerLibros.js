@@ -1,17 +1,15 @@
 
 const obtenerLibrosData = async () => {
-  const URLAPI = "https://www.googleapis.com/books/v1/volumes?q=subject:history&maxResults=10&langRestrict=es";
+  const URLAPI = "http://localhost:8080/api/v1/books/all";
   let listaDeLibros;
-  
-  try {
-    const librosData = await fetch(URLAPI);
-    const librosJson = await librosData.json();
-    listaDeLibros = librosJson.items
-    
-    return listaDeLibros;
-  } catch(error) {
-    console.log(error);
-  }
+ 
+  await fetch(URLAPI)
+  .then(response => response.json())
+  .then(data => listaDeLibros = data)
+  .then(data => console.log(data))
+  .catch(error => console.log(error));
+
+  return listaDeLibros.slice(0, 20);
 }
 
 export default obtenerLibrosData;
