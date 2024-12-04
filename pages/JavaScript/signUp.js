@@ -56,10 +56,10 @@ document.getElementById('registroForm').addEventListener('submit', async functio
   // ------------------------
   try {
     const registroExitoso = await agregarUsuarioBD({
-      nombre: userName,
-      telefono: userPhone,
-      correo: userEmail,
-      contrasena: userPassword
+      name: userName,
+      telephone: userPhone,
+      email: userEmail,
+      password: userPassword
     });
 
     if (registroExitoso) {

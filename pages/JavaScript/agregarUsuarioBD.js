@@ -1,6 +1,6 @@
 
 export default async function agregarUsuarioBD(nuevoUsuario) {
-  const URL = "https://api.tudominio.com/usuarios"; // Cambia esto a tu endpoint real
+  const URL = "http://localhost:8080/api/bda"; // Cambia esto a tu endpoint real
 
   try {
     const response = await fetch(URL, {
