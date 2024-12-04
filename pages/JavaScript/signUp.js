@@ -1,5 +1,6 @@
 import agregarUsuarioBD from "./agregarUsuarioBD.js";
 
+
 document.getElementById('registroForm').addEventListener('submit', async function (event) {
   event.preventDefault();
   // ------------------------
@@ -61,23 +62,30 @@ document.getElementById('registroForm').addEventListener('submit', async functio
   // Enviar los datos a la API
   // ------------------------
   try {
-    agregarUsuarioBD(newUserData);    
-    
-    // if (registroExitoso) {
-    //   alertaDiv.innerHTML = `
-    //     <div class="alert alert-success" role="alert">
-    //       Registro exitoso. Usuario creado correctamente.
-    //     </div>
-    //   `;
-    //   // Reiniciar el formulario
-    //   document.getElementById('registroForm').reset();
-    // } else {
-    //   alertaDiv.innerHTML = `
-    //     <div class="alert alert-danger" role="alert">
-    //       Hubo un problema al registrar al usuario. Inténtalo nuevamente.
-    //     </div>
-    //   `;
-    
+    const registroExitoso = await agregarUsuarioBD({
+      name: userName,
+      telephone: userPhone,
+      email: userEmail,
+      password: userPassword
+    });
+
+    if (registroExitoso) {
+
+      alertaDiv.innerHTML = `
+        <div class="alert alert-success" role="alert">
+          Registro exitoso. Usuario creado correctamente.
+        </div>
+      `;
+      // Reiniciar el formulario
+      document.getElementById('registroForm').reset();
+    } else {
+      alertaDiv.innerHTML = `
+        <div class="alert alert-danger" role="alert">
+          Hubo un problema al registrar al usuario. Inténtalo nuevamente.
+        </div>
+      `;
+    }
+
   } catch (error) {
     console.error("Error al conectar con la API:", error);
     alertaDiv.innerHTML = `
@@ -87,3 +95,4 @@ document.getElementById('registroForm').addEventListener('submit', async functio
     `;
   }
 });
+

@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 export default async function agregarUsuarioBD(newUserData) {
   const URL = "http://localhost:8080/api/bda"; 
+=======
+
+export default async function agregarUsuarioBD(nuevoUsuario) {
+  const URL = "http://localhost:8080/api/bda"; // Cambia esto a tu endpoint real
+
+>>>>>>> 498af51600aab2e8414d328dc46ccb8ae2685ef2
   try {
     const response = await fetch(URL, {
       method: "POST",
