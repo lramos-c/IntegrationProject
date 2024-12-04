@@ -1,146 +1,125 @@
-// Obtener libros del localStorage
+import obtenerLibrosData from "./obtenerLibros.js";
+
+// Get books from localStorage
 function getBooks() {
     return JSON.parse(localStorage.getItem('books')) || [];
 }
-// Renderizar los libros en la página principal
-function renderBooks() {
+
+// Render books on main page
+async function renderBooks() {
     const container = document.getElementById('products-container');
-    const books = getBooks();
+    const booksList = await obtenerLibrosData();
+    
+    // Store books in localStorage for later use
+    localStorage.setItem('books', JSON.stringify(booksList));
+    
     container.innerHTML = '';
 
-    books.forEach((book) => {
+    booksList.forEach((book) => {
         const productCard = document.createElement('div');
         productCard.className = 'product-card';
 
         productCard.innerHTML = `
-            <img src="${book.img}" alt="${book.title}" class="product-img">
+            <img src="${book.coverImg || 'default-image.jpg'}" alt="${book.title}" class="product-img">
             <h3 class="product-title">${book.title}</h3>
             <p class="product-author">Autor: ${book.author}</p>
-            <p class="product-price">Precio: $${book.price.toFixed(2)}</p>
+            <p class="product-price">Precio: $${book.price}</p>
             <button class="view-details-btn btn btn-dark" data-isbn="${book.isbn}">Ver Detalles</button>
-            <button class="add-to-cart-btn" data-isbn="${book.isbn}">Añadir al Carrito</button>
+            <button class="add-to-cart-btn btn btn-primary" data-isbn="${book.isbn}">Añadir al Carrito</button>
         `;
 
         container.appendChild(productCard);
     });
 
-    // Agregar funcionalidad al botón "Ver Detalles"
-    document.querySelectorAll('.view-details-btn').forEach((button) =>
-        button.addEventListener('click', (event) => openProductModal(event.target.dataset.isbn))
-    );
-
-    // Agregar funcionalidad al botón "Añadir al Carrito"
-    document.querySelectorAll('.add-to-cart-btn').forEach((button) =>
-        button.addEventListener('click', (event) => addToCart(event.target.dataset.isbn))
-    );
+    // Add event listeners after cards are created
+    addEventListeners();
 }
 
-function addToCart(isbn) {
-    const books = getBooks();  // Get the books data
-    const book = books.find((b) => b.isbn === isbn);  // Find the book by ISBN
-
-    if (book) {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-        // Check if the book is already in the cart by ISBN
-        const existingItem = cart.find((item) => item.isbn === isbn);
-        
-        if (existingItem) {
-            // If the book is already in the cart, increase the quantity
-            existingItem.quantity += 1;
-        } else {
-            // If the book is not in the cart, add it with quantity 1
-            book.quantity = 1;
-            cart.push(book);
-        }
-
-        // Save the updated cart to localStorage
-        localStorage.setItem('cart', JSON.stringify(cart));
-
-        // Update the cart UI automatically
-        renderCart();  // Call renderCart to update the cart UI
-    }
-}
-
- // Add event listeners to "View Details" buttons
- document.querySelectorAll(".view-details-btn").forEach((button) => {
-    button.addEventListener("click", (event) => {
-        const isbn = event.target.dataset.isbn;
-        openProductModal(isbn);
+function addEventListeners() {
+    // View Details buttons
+    document.querySelectorAll('.view-details-btn').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const isbn = e.target.getAttribute('data-isbn');
+            openProductModal(isbn);
+        });
     });
-});
+
+    // Add to Cart buttons
+    document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const isbn = e.target.getAttribute('data-isbn');
+            addToCart(isbn);
+        });
+    });
+}
 
 function openProductModal(isbn) {
     const books = getBooks();
     const book = books.find(b => b.isbn === isbn);
 
     if (book) {
-        // Populate modal with product data
-        document.getElementById("modal-product-img").src = book.img;
-        document.getElementById("modal-product-title").textContent = book.title;
-        document.getElementById("modal-product-author").textContent = `Autor: ${book.author}`;
-        document.getElementById("modal-product-price").textContent = `Precio: $${book.price.toFixed(2)}`;
-        document.getElementById("modal-product-description").textContent = book.description;
+        const modal = document.getElementById('product-modal');
+        
+        // Update modal content
+        document.getElementById('modal-product-img').src = book.coverImg || 'default-image.jpg';
+        document.getElementById('modal-product-title').textContent = book.title;
+        document.getElementById('modal-product-author').textContent = `Autor: ${book.author}`;
+        document.getElementById('modal-product-price').textContent = `Precio: $${book.price}`;
+        document.getElementById('modal-product-description').textContent = book.description || 'No hay descripción disponible';
 
-        // Call renderRatingStars with the book's rating (assuming it's a number between 1 and 5)
-        const rating = book.rating || 0; // Default to 0 if no rating
-        renderRatingStars(rating); // This will update the stars in the modal
+        // Show modal
+        modal.style.display = 'block';
 
-        // Add event listener to "Add to Cart" button inside the modal
-        document.getElementById("add-to-cart-btn").onclick = () => addToCart(isbn);
-
-        // Show the modal
-        document.getElementById("product-modal").style.display = "block";
+        // Add event listener to Add to Cart button in modal
+        const modalAddToCartBtn = document.getElementById('add-to-cart-btn');
+        modalAddToCartBtn.onclick = () => addToCart(isbn);
     }
 }
 
-// Function to render the star rating
-function renderRatingStars(rating) {
-    const starsContainer = document.getElementById("modal-product-rating");
-    starsContainer.innerHTML = ''; // Clear any existing stars
+function addToCart(isbn) {
+    const books = getBooks();
+    const book = books.find(b => b.isbn === isbn);
 
-    for (let i = 1; i <= 5; i++) {
-        const star = document.createElement('span');
-        if (i <= rating) {
-            star.className = 'star filled';
+    if (book) {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existingItem = cart.find(item => item.isbn === isbn);
+
+        if (existingItem) {
+            existingItem.quantity = (existingItem.quantity || 1) + 1;
         } else {
-            star.className = 'star';
+            cart.push({ ...book, quantity: 1 });
         }
-        star.textContent = '★';
-        starsContainer.appendChild(star);
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        
+        // Show success message
+        alert('Libro añadido al carrito exitosamente');
+        
+        // Update cart UI if you have a cart display
+        if (typeof renderCart === 'function') {
+            renderCart();
+        }
     }
 }
 
-// Function to close the modal
-document.getElementById("close-modal").addEventListener("click", () => {
-    document.getElementById("product-modal").style.display = "none";
+// Modal close button
+document.addEventListener('DOMContentLoaded', () => {
+    const closeBtn = document.getElementById('close-modal');
+    const modal = document.getElementById('product-modal');
+
+    if (closeBtn && modal) {
+        closeBtn.onclick = () => {
+            modal.style.display = 'none';
+        };
+    }
+
+    // Close modal when clicking outside
+    window.onclick = (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    };
+
+    // Initial render
+    renderBooks();
 });
-
-// Function to close the modal
-document.getElementById("close-modal").addEventListener("click", () => {
-    document.getElementById("product-modal").style.display = "none";
-});
-
-// Render inicial
-renderBooks();
-
-// Sample modal structure
-// Assuming you already have the modal structure like this:
-const modalHTML = `
-<div id="product-modal" class="modal" style="display: none;">
-    <div class="modal-content">
-        <span id="close-modal" class="close">&times;</span>
-        <div class="product-details">
-            <img id="modal-product-img" alt="Product Image">
-            <h2 id="modal-product-title"></h2>
-            <p id="modal-product-author"></p>
-            <p id="modal-product-price"></p>
-            <p id="modal-product-description"></p>
-            <div id="modal-product-rating"></div> <!-- Star rating container -->
-            <button id="add-to-cart-btn">Añadir al Carrito</button>
-        </div>
-    </div>
-</div>
-`;
-
-document.body.insertAdjacentHTML('beforeend', modalHTML);  // Dynamically add modal to the body
